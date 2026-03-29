@@ -1,0 +1,424 @@
+{
+  "id": "toujitsu",
+  "title": "オークション当日",
+  "subtitle": "JAPANESE WAGYU WORLD AUCTION 2026",
+  "date": "2026年4月4日（土）",
+  "startTime": "10:00",
+  "endTime": "12:00",
+  "venue": "和牛マスター株式会社",
+  "mc1": {
+    "name": "Marika",
+    "fullName": "Marika Watanabe",
+    "lang": "英語実況 / 日本語"
+  },
+  "mc2": null,
+  "parts": [
+    {
+      "id": "part1",
+      "title": "PART 1　　事前アナウンス  /  Pre-Auction Announcement",
+      "scheduledTime": null,
+      "rows": [
+        {
+          "time": "10:10",
+          "action": "事前アナウンス\nMarika 読み上げ\n（日→英）\n会場内 BGM\n小さめで流す",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "まもなく、Japanese Wagyu World Auctionを開始いたします。",
+                "ご来場のお客様に、ご案内を申し上げます。",
+                "本日は、会場内を動画とお写真で撮影しております。",
+                "後日撮影いたしました動画・画像については、",
+                "主催者であります和牛マスター輸出拡大コンソーシアムによる",
+                "資料作成、PR活動、SNSなどへ使用させていただきますことがございます。",
+                "予めご了承いただきますようお願い申し上げます。",
+                "Good morning, everyone.",
+                "The Japanese Wagyu World Auction will begin shortly.",
+                "Before we start, we'd like to make an important announcement.",
+                "Today's event will be recorded and photographed.",
+                "The footage and images may later be used by the host organization,",
+                "the Wagyu Master Export Expansion Consortium,",
+                "for documentation, promotional materials, and social media.",
+                "Thank you for your understanding and cooperation."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part2",
+      "title": "PART 2　　概要説明  /  Auction Overview — Mr. Yamaji",
+      "scheduledTime": null,
+      "rows": [
+        {
+          "time": "10:30",
+          "action": "山路海外事業部長\n登壇\n概要説明\n（日本語）\nMarika\nステージ隣で待機",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "皆様、おはようございます。",
+                "Japanese Wagyu World Auction開会に先立ちまして、",
+                "ワールドオークション実行委員で、",
+                "エスフーズ海外事業部長の山路より、",
+                "ごあいさつと、せりの概要説明を行います。",
+                "Good morning, everyone.",
+                "Before we officially begin the Japanese Wagyu World Auction,",
+                "we would like to invite Mr. Yamaji,",
+                "Executive Officer and Head of Overseas Business at S Foods Inc.,",
+                "to deliver a few opening words",
+                "and provide a brief overview of today's auction.",
+                "note",
+                "（山路部長　概要説明中）",
+                "★ Marikaは山路部長の説明を聞きながら待機",
+                "説明終了後、すぐに締めアナウンスへ"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "Thank you very much, Mr. Yamaji."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part3",
+      "title": "PART 3　　開会・来賓あいさつ  /  Opening — Murakami / Mino",
+      "scheduledTime": null,
+      "rows": [
+        {
+          "time": "10:45",
+          "action": "村上実行委員長\n登壇\n（日本語あいさつ）\nMarika\n横で待機",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "それでは、只今より「Japanese Wagyu World Auction」を開会いたします。",
+                "開会にあたりまして、主催者であります",
+                "ワールドオークション実行委員長　村上真之助より",
+                "ご挨拶申し上げます。",
+                "It is now our pleasure to officially open",
+                "the Japanese Wagyu World Auction.",
+                "To begin, we would like to invite",
+                "the Chairman of the World Auction Executive Committee,",
+                "Mr. Shinnosuke Murakami,",
+                "to deliver the opening address.",
+                "note",
+                "（村上委員長　あいさつ中）",
+                "★ 日本語で簡単にご挨拶"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "Mr. Murakami, thank you very much."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "10:50",
+          "action": "三野敏克 審議官\n登壇\n（来賓あいさつ）\n農林水産省\n輸出促進審議官\nMarika\n横で待機",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "続きまして、",
+                "農林水産省　輸出促進審議官　三野（みの）敏克（としかつ）さまに",
+                "ご挨拶をお願いいたします。",
+                "We would now like to welcome our distinguished guest,",
+                "Mr. Toshikatsu Mino,",
+                "Counselor for Export Promotion,",
+                "Ministry of Agriculture, Forestry and Fisheries.",
+                "Mr. Mino, please.",
+                "note",
+                "（三野審議官　あいさつ中）"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "Mr. Mino, thank you very much.",
+                "And now — let us begin."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part4",
+      "title": "PART 4　　オークション開始  /  Auction Opens",
+      "scheduledTime": null,
+      "rows": [
+        {
+          "time": "11:00",
+          "action": "中川（セリ人）\n＆ Marika\nセリ台へ\nスタッフ：\nせり番号ボード\nスタンバイ",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "これより「Japanese Wagyu World Auction」を始めます。",
+                "オークションの進行は、",
+                "姫路市場　セリ人の中川と",
+                "和牛着物ブッチャー　渡辺マリカです。",
+                "よろしくお願いいたします。",
+                "We are now ready to begin the Japanese Wagyu World Auction!",
+                "Today's auction will be conducted by",
+                "Mr. Nakagawa, a professional auctioneer from the Himeji Market,",
+                "together with Wagyu Kimono Butcher, Ms. Marika Watanabe.",
+                "Let's get started!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part5",
+      "title": "PART 5　　神戸ビーフの部  /  KOBE BEEF Section  ①Gold  ②Silver  ③Bronze  ×10 lots",
+      "scheduledTime": null,
+      "rows": [
+        {
+          "time": "11:00\n〜",
+          "action": "【セクション開始】\nMarika\nセクション紹介\nMarika：\n各頭　英語で進行",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "Our first section — KOBE BEEF.",
+                "Kobe Beef is one of the most renowned brands in the world —",
+                "and today we have ten exceptional lots across three award tiers:",
+                "Gold, Silver, and Bronze.",
+                "Let's begin."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "（各頭\nテンプレ\nート）",
+          "action": "【1頭ごとの流れ】\n① Marika：\n英語で競り進行\n（番号・金額・\n落札者案内）\n② スタッフ：\n景品授与（記念品）\n③ 記念撮影\n（オペレーター）\n繰り返し × 10頭",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "〔Lot template〕",
+                "Lot number [#] — bidding opens at [amount].",
+                "Going once… going twice…",
+                "Sold! Lot [#] — [amount] — to [Buyer / Company name].",
+                "Congratulations!",
+                "note",
+                "★ 落札のたびにスタッフが記念品を授与",
+                "★ Marikaは落札者名・金額を正確に英語で伝えること",
+                "★ 神戸ビーフの部：Gold（〇頭）Silver（〇頭）Bronze（〇頭）",
+                "→ 各賞の区切りでMarikaがセクション変わりを英語でアナウンス"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "【賞区切り\nアナウンス\n例】\nGold→Silver\n／\nSilver→Bronze",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "〔Gold → Silver の区切り〕",
+                "That concludes the Gold tier of KOBE BEEF.",
+                "We now move into the Silver tier.",
+                "〔Silver → Bronze の区切り〕",
+                "Excellent bidding, everyone.",
+                "Now — our final tier for KOBE BEEF: the Bronze."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part6",
+      "title": "PART 6　　各ブランド牛の部  /  Brand Wagyu Section  ×20 brands  ×3 lots each  =60 lots",
+      "scheduledTime": null,
+      "rows": [
+        {
+          "time": "〜",
+          "action": "【セクション\n移行アナウンス】\nMarika\n各ブランド開始前に\nブランド名を英語で\nアナウンス\n同様のテンプレ\nートで60頭続行",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "KOBE BEEF — complete!",
+                "We now move into our Brand Wagyu section.",
+                "Twenty renowned brands, three lots each —",
+                "sixty lots of world-class Japanese Wagyu.",
+                "Let's keep the momentum going."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "（各ブランド\nテンプレ\nート）",
+          "action": "各ブランド開始時\nMarikaがブランド名\nをアナウンス\nMarika：\n3頭すべて英語で\n競り進行\n記念品授与 × 3頭\n×20ブランド",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "〔ブランド開始アナウンス例〕",
+                "Next — [Brand Name in English].",
+                "Three lots. Let's go.",
+                "note",
+                "★ 各ブランド3頭ごとに同じテンプレートを繰り返す",
+                "★ 落札アナウンスはPART 5と同様のフォーマット"
+              ]
+            },
+            {
+              "speaker": "ブランド一覧（順番通り）",
+              "type": "note",
+              "lines": [
+                "01. ふらの和牛  /  Furano Wagyu",
+                "02. 北海道エデンビーフ  /  Hokkaido Eden Beef",
+                "03. 神明　釧白和牛  /  Shinmei Kushiro Wagyu",
+                "04. 仙台牛  /  Sendai Beef",
+                "05. 信州プレミアム  /  Shinshu Premium Beef",
+                "06. 兵庫ワインビーフ  /  Hyogo Wine Beef",
+                "07. 奈義和牛  /  Nagi Wagyu",
+                "08. 東伯和牛（オレイン55）  /  Tohaku Wagyu (Olein 55)",
+                "09. 高森和牛  /  Takamori Wagyu",
+                "10. 佐賀牛  /  Saga Beef",
+                "11. おおいた和牛  /  Oita Wagyu",
+                "12. 尾崎牛  /  Ozaki Beef",
+                "13. ひまわり牛  /  Himawari Beef",
+                "14. シトラスビーフ  /  Citrus Beef",
+                "15. キリシマーブル  /  Kirishi-marble",
+                "16. のざき牛  /  Nozaki Beef",
+                "17. なかやま牛  /  Nakayama Beef",
+                "18. 平松和牛  /  Hiramatu Wagyu",
+                "19. 近江牛  /  Omi Beef",
+                "20. 松阪牛  /  Matsusaka Beef"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part7",
+      "title": "PART 7　　グランドチャンピオン  /  Grand Champion — 村上真之助賞",
+      "scheduledTime": null,
+      "rows": [
+        {
+          "time": "〜\n12:00\n直前",
+          "action": "全70頭終了後\nスタッフ準備：\n・杉彫り木製盾\n・チャンピオンベルト\nMurakami委員長\n舞台袖で待機\n記念撮影\nカメラスタンバイ",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "We have now completed all seventy lots.",
+                "What an incredible auction.",
+                "And now — the moment everyone has been waiting for.",
+                "It is time to crown the Grand Champion of",
+                "the Japanese Wagyu World Auction 2026."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "【グランドチャンピオン\n発表】\nMarika\n最高落札者を発表\n村上委員長より\n杉彫り木製盾\n＋ベルト授与\n記念撮影",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "The Grand Champion — and the recipient of the",
+                "Shinnosuke Murakami Award —",
+                "is…",
+                "〔★ 落札者名 発表〕",
+                "Congratulations!",
+                "On behalf of the World Auction Executive Committee,",
+                "Mr. Shinnosuke Murakami will now present",
+                "the Grand Champion trophy and the Champion Belt.",
+                "note",
+                "★ 授与後：記念撮影",
+                "★ キャップとジャンパーも贈呈",
+                "（ブラボーワークス スタッフ対応）"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part8",
+      "title": "PART 8　　閉会・花見の宴へ移行  /  Closing / Transition to Hanami no Utage",
+      "scheduledTime": null,
+      "rows": [
+        {
+          "time": "12:00",
+          "action": "【閉会アナウンス】\nMarika\n閉会宣言\n山路部長\n閉会あいさつ（英語）\nMarika横で待機",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "これをもちまして「Japanese Wagyu World Auction」を終了いたします。",
+                "ありがとうございました。",
+                "閉会にあたりまして、",
+                "エスフーズ海外事業部長　山路よりご挨拶申し上げます。",
+                "This concludes the Japanese Wagyu World Auction.",
+                "Thank you all so much.",
+                "To close, we invite Mr. Yamaji,",
+                "Head of Overseas Business at S Foods Inc.,",
+                "to deliver the closing address.",
+                "note",
+                "（山路部長　閉会あいさつ　英語）"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "12:05",
+          "action": "【花見の宴\n移行案内】\nMarika\n移動案内アナウンス\n会場スタッフ\n誘導スタンバイ",
+          "script": [
+            {
+              "speaker": "Marika",
+              "type": "mc1",
+              "lines": [
+                "このあとひきつづきまして、",
+                "「和牛マスター1F入口広場」（または「5F駐車場」）にて",
+                "「Japanese Wagyu World Auction　桜花見の宴」を行いますので、",
+                "皆様、ご移動をお願いいたします。",
+                "We would now like to invite all of you to join us",
+                "for the Cherry Blossom Flower Viewing Reception —",
+                "the Hanami no Utage.",
+                "The reception will be held at",
+                "the Wagyu Master 1st Floor Entrance Plaza.",
+                "（Alternate: 5th Floor Parking Area.）",
+                "Please begin making your way to the venue.",
+                "We look forward to seeing you there!"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

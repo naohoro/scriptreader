@@ -1,0 +1,790 @@
+{
+  "id": "zenjasai",
+  "title": "前夜祭",
+  "subtitle": "JAPANESE WAGYU WORLD AUCTION 2026",
+  "date": "2026年4月3日（金）",
+  "startTime": "17:00",
+  "endTime": "20:30",
+  "venue": "ホテル日航姫路　光琳の間（3F）",
+  "mc1": {
+    "name": "Justin",
+    "fullName": "Justin Patterson",
+    "lang": "英語"
+  },
+  "mc2": {
+    "name": "Marika",
+    "fullName": "Marika Watanabe",
+    "lang": "日本語補足"
+  },
+  "parts": [
+    {
+      "id": "part1",
+      "title": "PART 1　受付・ウェルカムタイム　17:00 —",
+      "scheduledTime": "17:00",
+      "rows": [
+        {
+          "time": "17:00\n〜\n17:55",
+          "action": "受付スタート\nウェルカムドリンク提供\nBGM開始\nMarika・Justin\n場内を巡回して\nゲストにウェルカムの声掛け",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Welcome, everyone, to the Japanese Wagyu World Auction 2026 Reception!",
+                "Thank you so much for joining us this evening.",
+                "Please help yourself to a welcome drink and enjoy the atmosphere.",
+                "We have an exciting program ahead — stay with us."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "ようこそ、ワールドオークション2026 前夜祭へ！",
+                "ウェルカムドリンクをどうぞお楽しみください。"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part2",
+      "title": "PART 2　開会式 ／ 村上社長ご挨拶 ／ 特別発表　18:00 —",
+      "scheduledTime": "18:00",
+      "rows": [
+        {
+          "time": "18:00",
+          "action": "BGMフェードアウト\nJustin・Marikaステージへ\n照明：ステージにスポット\nゲストはステージ前に\n集まるよう誘導",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Good evening, everyone!",
+                "My name is Justin Patterson — and it is my absolute honor",
+                "to be your MC for this evening.",
+                "And joining me tonight, please welcome my co-host —",
+                "the one and only Kimono Butcher, Marika Watanabe!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "皆さん、こんばんはー！",
+                "Hi, everyone! I'm Marika — you may know me as the Kimono Butcher!",
+                "I'm so excited to be part of the Japanese Wagyu World Auction this year!"
+              ]
+            },
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Welcome to the 4th Japanese Wagyu World Auction, Reception Evening.",
+                "Tonight, once again, Wagyu professionals from countries around the world",
+                "have gathered here in Himeji.",
+                "That alone tells us everything about how far Japanese Wagyu has come.",
+                "Please make your way toward the stage — we are about to begin."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:02",
+          "action": "村上社長　壇上へ",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "It is my honor to invite the President of S Foods Inc.,",
+                "Mr. Murakami, to deliver his opening remarks."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "エスフーズ株式会社 代表取締役社長、村上様のご挨拶です。"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:02\n〜\n18:08",
+          "action": "【村上社長】\n開会のご挨拶\n（約5〜6分）\n★ 挨拶終了後も\n壇上に残っていただく",
+          "script": [
+            {
+              "speaker": "村上社長　ご挨拶",
+              "type": "note",
+              "lines": [
+                "≪ スピーチ内容は別途確認 ≫"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:08",
+          "action": "【重要キュー】\n映像スタート合図\n（オペレーターへ）\n村上社長　壇上に残る\nスクリーンに映像上映\n（約2〜3分）",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Please direct your attention to the screen."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "スクリーンをご覧ください。"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:08\n〜\n18:11",
+          "action": "映像上映中\n（ドジャース提供フッテージ）\nBGM：映像に同期",
+          "script": [
+            {
+              "speaker": "映像上映",
+              "type": "note",
+              "lines": [
+                "≪ ドジャース映像 ≫　（2〜3分）",
+                "映像終了と同時に村上社長がマイクへ"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:11\n〜\n18:13",
+          "action": "村上社長\nマイクで正式発表",
+          "script": [
+            {
+              "speaker": "村上社長　発表",
+              "type": "note",
+              "lines": [
+                "≪ スポンサーシップ正式発表　スピーチ内容は別途確認 ≫"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:13",
+          "action": "発表後　大きな拍手\n村上社長\n壇上に残ったまま",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "S Foods Inc. has just announced an official sponsorship agreement",
+                "with the Los Angeles Dodgers!",
+                "This September — the 4th, 5th, and 6th —",
+                "Dodger Stadium will host \"Japanese WAGYU Days\":",
+                "three days dedicated to showcasing the very best of Japan's branded wagyu.",
+                "This is President Murakami's vision —",
+                "to bring Japanese branded wagyu, with all its heritage and craftsmanship,",
+                "to fans across the world."
+              ]
+            },
+            {
+              "speaker": "BOTH",
+              "type": "both",
+              "lines": [
+                "Justin: Marika — Dodger Stadium and Kobe Beef! Can you believe it?",
+                "Marika: This is incredible!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "とても楽しみです！もっと世界中に日本のブランド和牛が広まると良いですね。"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:16",
+          "action": "引き続き壇上\n照明キープ",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "And there is one more announcement tonight.",
+                "S Foods is proud to declare \"KOBE BEEF VISION\" —",
+                "a commitment to lead Japanese livestock farming through animal welfare,",
+                "sustainability, and the continued elevation of the Kobe Beef brand.",
+                "The future of Japanese Wagyu starts now."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:18",
+          "action": "村上社長　降壇\n盛大な拍手\n照明：全体へ",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Please give a huge round of applause for President Murakami!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "村上社長、ありがとうございました。"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part3",
+      "title": "PART 3　来賓ご挨拶　18:20 —",
+      "scheduledTime": "18:20",
+      "rows": [
+        {
+          "time": "18:20",
+          "action": "Ken Hirose 氏　壇上へ\n※「農林水産政務官」の\n肩書きは紹介しない",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "We are honored to welcome our distinguished guests.",
+                "First, please welcome a Member of the National Diet,",
+                "and the Liberal Democratic Party — Mr. Ken Hirose."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "自民党所属・国会議員、広瀬　建様です。"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:20\n〜\n18:23",
+          "action": "【Ken Hirose 国会議員】\nご挨拶（約3分）\n注意：紹介は\n「自民党所属・国会議員」のみ\n「農林水産政務官」は\n使用しないこと",
+          "script": [
+            {
+              "speaker": "Ken Hirose 氏　ご挨拶",
+              "type": "note",
+              "lines": [
+                "≪ スピーチ内容は別途確認 ≫"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:23",
+          "action": "Ken Hirose 氏　降壇\n→ 続けて姫路市長 壇上へ",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Thank you very much, Mr. Hirose.",
+                "Please welcome our next distinguished guest —",
+                "the Mayor of Himeji City, Mayor Kiyomoto."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "広瀬様、ありがとうございました。",
+                "続きまして、姫路市長、清元秀泰様です。"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:23\n〜\n18:28",
+          "action": "【姫路市長 清元秀泰様】\nご挨拶（約4〜5分）",
+          "script": [
+            {
+              "speaker": "姫路市長　ご挨拶",
+              "type": "note",
+              "lines": [
+                "≪ スピーチ内容は別途確認 ≫"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:28",
+          "action": "市長　降壇",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Thank you so much, Mayor Kiyomoto."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "清元市長、ありがとうございました。"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part4",
+      "title": "PART 4　セレモニー　— ベルト返還式 ／ 乾杯　18:30 —",
+      "scheduledTime": "18:30",
+      "rows": [
+        {
+          "time": "18:30",
+          "action": "前年度GCバイヤー\n壇上へ\nWYNN PALACE 泓\nMr. Hironori Maeda\nベルト準備確認",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "At last year's Japanese Wagyu World Auction, we introduced the Grand Champion Buyer Belt —",
+                "awarded to the buyer who claimed the top lot.",
+                "Tonight, for the very first time, we invite last year's champion",
+                "to return the belt — and open the stage for a new one.",
+                "Please welcome Mr. Hironori Maeda of WYNN PALACE 泓!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "Mr. Maeda — please come to the stage."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:32",
+          "action": "ベルト返還\n（実行委員長へ）\n記念撮影",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "The belt is back — who will claim it tomorrow?",
+                "Mr. Maeda, thank you. Please give him a big hand!"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:34",
+          "action": "スパークリングワイン\n全員のグラスへ\nウェイタースタンバイ\n乾杯発声者：\n前田 裕紀 様\n（まえだ ひろのり）\n（WYNN PALACE 泓）",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Please take your glass.",
+                "We are honored to invite Mr. Hironori Maeda of WYNN PALACE 泓",
+                "to lead us in a toast."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "Please raise your glass."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:36",
+          "action": "乾杯発声\n全員で乾杯\n前田様　降壇\n★ Marikaはこの後\nカッティング準備のため\n退場\nステージ上に\nカッティング用テーブル設置\n（3分）",
+          "script": [
+            {
+              "speaker": "≪ 乾杯 ≫",
+              "type": "note",
+              "lines": [
+                "前田様による乾杯のご発声"
+              ]
+            },
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Kampai! Cheers, everyone!",
+                "Mr. Maeda — ありがとうございました。Thank you so much.",
+                "Please give him a warm round of applause!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part5",
+      "title": "PART 5　着物ブッチャー カッティングショー　18:40 —",
+      "scheduledTime": "18:40",
+      "rows": [
+        {
+          "time": "18:40",
+          "action": "照明演出\n（ステージにスポット）\nナイフ・まな板\n準備完了確認\nMarika 登場",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Before we move to the tasting,",
+                "we have something very special for you.",
+                "Please welcome... the one and only Kimono Butcher — MARIKA!"
+              ]
+            },
+            {
+              "speaker": "Marika（登場）",
+              "type": "mc2",
+              "lines": [
+                "Thank you, Justin. Good evening, everyone."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:40\n〜\n18:55",
+          "action": "カッティングショー\n（約15分）\nMarikaがメインで進行\nJustinは適宜コメントのみ",
+          "script": [
+            {
+              "speaker": "Marika（進行）",
+              "type": "mc2",
+              "lines": [
+                "≪ スクリプト別途 ≫",
+                "（英語でカッティングデモンストレーションを進行）"
+              ]
+            },
+            {
+              "speaker": "Justin（適宜）",
+              "type": "mc1",
+              "lines": [
+                "（Marikaの進行に合わせて短いコメントのみ。実況・解説は行わない）",
+                "e.g.  \"Marika — what should we be looking for in that cut?\""
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:55",
+          "action": "ショー終了\n大きな拍手\n記念撮影（希望者）",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Give it up for Marika!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "Thank you so much. I hope that was enjoyable."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part6",
+      "title": "PART 6　ブランド牛 試食タイム　19:00 —",
+      "scheduledTime": "19:00",
+      "rows": [
+        {
+          "time": "19:00",
+          "action": "グリル担当スタート\nしゃぶしゃぶ担当スタート\nブース案内\n整理誘導スタッフ配置\n【メニュー】\n・ウデ（和牛・交雑牛）\n→ しゃぶしゃぶ\n（出汁・ポン酢がけ）\n・ロース（和牛・交雑牛）\n→ ステーキ 2種盛り合わせ",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "The tasting is now open.",
+                "Tonight we have two breeds side by side — full Wagyu and F1 Crossbred Wagyu,",
+                "served in two cuts: the shoulder as shabu-shabu, the loin as steak.",
+                "As most of you know, F1 is a cross between Japanese Wagyu and Holstein.",
+                "The quality has come a long way in recent years —",
+                "the marbling in particular has improved dramatically.",
+                "Tonight's F1 comes from a very specific producer in Fukuoka Prefecture.",
+                "Marika — can you tell us more?"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "Of course. Tonight's F1 is Munakata F1 — from Susuki Farm in Fukuoka.",
+                "What makes Susuki Farm special is that despite being a crossbred,",
+                "the marbling is exceptional — yet the finish on the palate is notably",
+                "clean and light. That contrast is exactly what makes it worth comparing.",
+                "And on the full Wagyu side — we have Furano Wagyu from Hokkaido.",
+                "Many of you are already fans, I'm sure.",
+                "Raised on the vast open plains of Hokkaido, it's a top-tier wagyu in every sense.",
+                "That superior fat quality — deep, rich umami — that's purely wagyu.",
+                "Please head to the station whenever you're ready,",
+                "and take your time enjoying the comparison."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "19:00\n〜\n19:20",
+          "action": "試食・歓談タイム\nMarika・Justinは\n場内を巡回\n国際バイヤーとの\n英語インタラクションを\n積極的に",
+          "script": [
+            {
+              "speaker": "（フリー巡回 — アドリブ対応）",
+              "type": "note",
+              "lines": [
+                "Justin: \"How does the Ude compare to what you're expecting in tomorrow's lots?\"",
+                "Justin: \"What's your read on the fat distribution on the crossbred tonight?\"",
+                "Justin: \"Any cuts standing out to you so far?\"",
+                "（ゲストはプロフェッショナル。専門的な話題で自然に会話すること）"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part7",
+      "title": "PART 7　よさこい演舞　19:20 —",
+      "scheduledTime": "19:20",
+      "rows": [
+        {
+          "time": "19:15",
+          "action": "予告アナウンス\nよさこいチーム\nスタンバイ確認\n（舞台袖）\nBGMキュー準備",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Please make your way toward the stage.",
+                "A special performance is about to begin."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "You won't want to miss this."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "19:20",
+          "action": "よさこい開始\n照明演出\nMCは舞台袖へ",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Please welcome our Yosakoi performers —",
+                "enjoy the energy and passion of Japan!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "Please welcome — Hachikin-ran, and Kiryu!"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "19:20\n〜\n19:35",
+          "action": "よさこい演舞\n（約15分）\nMC舞台袖待機",
+          "script": [
+            {
+              "speaker": "≪ よさこい演舞 ≫",
+              "type": "note",
+              "lines": [
+                "約15分",
+                "終了後 → MCが戻ってお礼アナウンス"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "19:35",
+          "action": "演舞終了\n盛大な拍手",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Wasn't that something!",
+                "One more round of applause, please!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "Hachikin-ran, Kiryu — thank you so much!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part8",
+      "title": "PART 8　閉会　20:00 —",
+      "scheduledTime": "20:00",
+      "rows": [
+        {
+          "time": "19:57",
+          "action": "山路部長　舞台袖で\nスタンバイ\nプロジェクター映像\nオペレーターへ\n事前確認",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Good evenings like this always go by far too quickly.",
+                "We are almost at the end of our time together tonight.",
+                "For our closing remarks, please welcome\nMr. Yamaji of S Foods."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "Mr. Yamaji — please."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "20:00",
+          "action": "山路部長　壇上へ\n（照明キープ）",
+          "script": [
+            {
+              "speaker": "山路部長",
+              "type": "note",
+              "lines": [
+                "本日はありがとうございました。",
+                "皆さんの中にはご存知の方もいるかもしれませんが、",
+                "我々は北海道に新たな屠場を建設します。",
+                "今晩は特別に、簡単なイントロを準備しましたので、",
+                "ご覧ください。"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "20:02",
+          "action": "【重要キュー】\n会場　全暗転\n映像上映スタート\n（1〜2分）\n映像終了後\n照明を戻す\n山路部長　再び壇上へ",
+          "script": [
+            {
+              "speaker": "映像上映",
+              "type": "note",
+              "lines": [
+                "≪ 北海道 新と畜場 紹介映像 ≫　（1〜2分）",
+                "映像終了と同時に照明を戻す"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "20:04",
+          "action": "山路部長　締め\nご挨拶後　降壇",
+          "script": [
+            {
+              "speaker": "山路部長",
+              "type": "note",
+              "lines": [
+                "今晩はありがとうございました。",
+                "それでは、明朝お会いしましょう。"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "20:05",
+          "action": "山路部長　降壇\nJustin・Marika\n締め",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Thank you, Mr. Yamaji.",
+                "Tomorrow is the main event — the Japanese Wagyu World Auction.",
+                "We look forward to seeing you all there.",
+                "Thank you to every one of you for an unforgettable evening.",
+                "Have a wonderful night!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "Thank you, Mr. Yamaji.",
+                "We look forward to seeing you all tomorrow."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "20:10\n〜\n20:30",
+          "action": "自由歓談\n名刺交換タイム\nMarika・Justinは\nフロアを巡回",
+          "script": [
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "★ TBD  【（フリータイム）】"
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "スタッフ：撤収準備は21:30以降"
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "（★ TBD）二次会のご案内：実施するか確認中"
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "→ 実施の場合：「ご希望の方は二次会のご案内をしております。スタッフまでお声がけください。」"
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "→ 実施しない場合：このアナウンスは省略"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
