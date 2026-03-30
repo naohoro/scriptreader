@@ -1,0 +1,12 @@
+# =============================================
+# config.local.sh.example  —  設定ファイルのテンプレート
+# =============================================
+# このファイルを config.local.sh としてコピーし、
+# GITHUB_PAT に取得したトークンを貼り付けてください。
+#
+#   cp config.local.sh.example config.local.sh
+# =============================================
+
+GITHUB_PAT="ghp_ここにトークンを貼り付ける"
+GITHUB_USER="naohoro"
+GITHUB_REPO="scriptreader"

@@ -643,6 +643,53 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   pointer-events: none;
 }
 
+/* Edit Warning Banner */
+#edit-warning {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(200, 140, 20, 0.10);
+  border-bottom: 1px solid rgba(200, 140, 20, 0.25);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--status-warn);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.edit-warning-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* Edit Mode — editable seg-lines */
+#script-scroll.edit-mode .seg-lines {
+  border: 1.5px dashed rgba(200, 140, 20, 0.45);
+  border-radius: 5px;
+  padding: 3px 6px;
+  cursor: text;
+  outline: none;
+  min-height: 1.5em;
+  transition: border-color 0.15s, background 0.15s;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+#script-scroll.edit-mode .seg-lines:focus {
+  border-color: var(--status-warn);
+  background: rgba(200, 140, 20, 0.05);
+}
+
+/* Edit button active state */
+#edit-btn.edit-active {
+  background: rgba(200, 140, 20, 0.12);
+  color: var(--status-warn);
+  border-color: rgba(200, 140, 20, 0.35);
+}
+
 /* Loading */
 .loading {
   display: flex;

@@ -231,7 +231,7 @@
         },
         {
           "time": "—",
-          "action": "表彰：村上新之助賞\n（★ TBD：受賞者確認中）\n記念撮影",
+          "action": "表彰：村上真之助賞\n（★ TBD：受賞者確認中）\n記念撮影",
           "script": [
             {
               "speaker": "",
@@ -244,14 +244,14 @@
               "speaker": "",
               "type": "note",
               "lines": [
-                "それでは「村上新之助賞」を発表いたします。"
+                "それでは「村上真之助賞」を発表いたします。"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "Japanese Wagyu World Auction 2026「村上新之助賞」の受賞者は、（★ TBD）様です。おめでとうございます！"
+                "Japanese Wagyu World Auction 2026「村上真之助賞」の受賞者は、（★ TBD）様です。おめでとうございます！"
               ]
             },
             {
@@ -559,13 +559,13 @@
       "rows": [
         {
           "time": "13:05\n〜\n13:15",
-          "action": "自由歓談・会食\n但馬牛写真撮影エリア開放\nMCはフロアを巡回\n（保呂田さんと同行）",
+          "action": "自由歓談・会食\n但馬牛写真撮影エリア開放\nMCはフロアを巡回\n（保呂田と同行）",
           "script": [
             {
               "speaker": "（フリータイム）",
               "type": "note",
               "lines": [
-                "中川・Horota　フロアを巡回し、国際バイヤーと交流\n（保呂田さんと同行）"
+                "中川・Horota　フロアを巡回し、国際バイヤーと交流\n（保呂田と同行）"
               ]
             }
           ]
@@ -643,7 +643,7 @@
               "type": "mc1",
               "lines": [
                 "JR姫路駅行きのシャトルバスがまもなく出発いたします。",
-                "13時30分発のバスをご利用の方は、会場前の道路にお集まりください。"
+                "13時00分発のバスをご利用の方は、会場前の道路にお集まりください。"
               ]
             },
             {
@@ -651,7 +651,7 @@
               "type": "mc1",
               "lines": [
                 "The shuttle bus to JR Himeji Station will be departing shortly.",
-                "If you are taking the 1:30 PM bus, please gather at the gate outside the venue."
+                "If you are taking the 1:00 PM bus, please gather at the gate outside the venue."
               ]
             }
           ]
@@ -731,14 +731,14 @@
       "rows": [
         {
           "time": "14:15",
-          "action": "バス運転手へ\n出発準備確認\n（14:30便は\n随時受け付け）",
+          "action": "バス運転手へ\n出発準備確認\n（14:00便は\n随時受け付け）",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
                 "JR姫路駅行きのシャトルバスのご案内です。",
-                "14時30分発のバスをご利用の方は、会場前の道路にお集まりください。"
+                "14時00分発のバスをご利用の方は、会場前の道路にお集まりください。"
               ]
             },
             {
@@ -746,7 +746,7 @@
               "type": "mc2",
               "lines": [
                 "A shuttle bus to JR Himeji Station is now available.",
-                "If you are taking the 2:30 PM bus, please make your way to the gate outside the venue."
+                "If you are taking the 2:00 PM bus, please make your way to the gate outside the venue."
               ]
             }
           ]

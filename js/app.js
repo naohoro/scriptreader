@@ -5,32 +5,40 @@
 // ───────────────────────────────────────────────
 const I18N = {
   ja: {
-    allMc:        '全員',
-    fontReset:    '標準',
-    langSwitch:   'EN',
-    themeToggle:  'ライト / ダーク',
-    loading:      '読み込み中...',
-    loadError:    '読み込みエラー',
-    statusBefore: (m) => m >= 60 ? `開始 ${Math.floor(m/60)}時間${m%60}分前` : `開始 ${m}分前`,
-    statusOnTime: '定刻通り',
-    statusLate:   (m) => `+${m}分 遅れ`,
-    statusWarn:   (m) => `+${m}分`,
-    statusRunning:'進行中',
-    statusEnded:  '終了',
+    allMc:           '全員',
+    fontReset:       '標準',
+    langSwitch:      'EN',
+    themeToggle:     'ライト / ダーク',
+    loading:         '読み込み中...',
+    loadError:       '読み込みエラー',
+    statusDaysBefore:(d) => `${d}日後`,
+    statusBefore:    (m) => m >= 60 ? `開始 ${Math.floor(m/60)}時間${m%60}分前` : `開始 ${m}分前`,
+    statusOnTime:    '定刻通り',
+    statusLate:      (m) => `+${m}分 遅れ`,
+    statusWarn:      (m) => `+${m}分`,
+    statusRunning:   '進行中',
+    statusEnded:     'イベント終了',
+    editBtn:         '編集',
+    editBtnActive:   '編集中',
+    editWarning:     'このページを閉じると原稿はリセットされます',
   },
   en: {
-    allMc:        'All',
-    fontReset:    'Reset',
-    langSwitch:   '日本語',
-    themeToggle:  'Light / Dark',
-    loading:      'Loading...',
-    loadError:    'Load error',
-    statusBefore: (m) => m >= 60 ? `Starts in ${Math.floor(m/60)}h ${m%60}m` : `Starts in ${m}m`,
-    statusOnTime: 'On Schedule',
-    statusLate:   (m) => `+${m}m Late`,
-    statusWarn:   (m) => `+${m}m`,
-    statusRunning:'Running',
-    statusEnded:  'Ended',
+    allMc:           'All',
+    fontReset:       'Reset',
+    langSwitch:      '日本語',
+    themeToggle:     'Light / Dark',
+    loading:         'Loading...',
+    loadError:       'Load error',
+    statusDaysBefore:(d) => `In ${d} day${d === 1 ? '' : 's'}`,
+    statusBefore:    (m) => m >= 60 ? `Starts in ${Math.floor(m/60)}h ${m%60}m` : `Starts in ${m}m`,
+    statusOnTime:    'On Schedule',
+    statusLate:      (m) => `+${m}m Late`,
+    statusWarn:      (m) => `+${m}m`,
+    statusRunning:   'Running',
+    statusEnded:     'Event Ended',
+    editBtn:         'Edit',
+    editBtnActive:   'Editing',
+    editWarning:     'Edits will be lost when you close this page',
   },
 };
 
@@ -48,6 +56,7 @@ const state = {
   fontSize:     parseInt(localStorage.getItem('fontSize') || '3'),
   lang:         localStorage.getItem('lang')     || 'ja',
   mcFilter:     'all',
+  editMode:     false,
   eventData:    null,
   activePartId: null,
 };
@@ -114,32 +123,66 @@ function nowMins() {
   return n.getHours() * 60 + n.getMinutes();
 }
 
+function parseEventDate(dateStr) {
+  // "2026年4月3日（金）" → Date (midnight, local time)
+  const m = dateStr.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+  if (!m) return null;
+  return new Date(parseInt(m[1]), parseInt(m[2]) - 1, parseInt(m[3]));
+}
+
 function updateTimeStatus(event) {
-  const el  = document.getElementById('time-status');
+  const el = document.getElementById('time-status');
   if (!el) return;
+
+  // ── Step 1: 日付チェック ──────────────────────
+  const eventDate = parseEventDate(event.date);
+  if (eventDate) {
+    const todayMidnight = new Date();
+    todayMidnight.setHours(0, 0, 0, 0);
+    const diffDays = Math.round((eventDate - todayMidnight) / 86400000);
+
+    if (diffDays > 0) {
+      // イベント前（当日より前）→ 「X日後」
+      el.textContent = t('statusDaysBefore', diffDays);
+      el.className   = 'status-before';
+      return;
+    }
+
+    if (diffDays < 0) {
+      // イベント日を過ぎた → 「イベント終了」
+      el.textContent = t('statusEnded');
+      el.className   = 'status-before';
+      return;
+    }
+    // diffDays === 0 → 当日 → 以下のリアルタイム判定へ
+  }
+
+  // ── Step 2: 当日のリアルタイム判定 ───────────
   const now   = nowMins();
   const start = parseTimeMins(event.startTime);
   const end   = parseTimeMins(event.endTime);
 
+  // 開始前
   if (start !== null && now < start) {
-    const diff = start - now;
-    el.textContent = t('statusBefore', diff);
+    el.textContent = t('statusBefore', start - now);
     el.className   = 'status-before';
     return;
   }
-  if (end !== null && now > end + 15) {
+
+  // 終了後（endTime + 5分 を超えたら）
+  if (end !== null && now > end + 5) {
     el.textContent = t('statusEnded');
     el.className   = 'status-before';
     return;
   }
 
-  let nextPart = null;
+  // 進行中：次のパート定刻との差分を計算
+  let nextPart     = null;
   let foundCurrent = false;
 
   for (let i = 0; i < event.parts.length; i++) {
     const pm = parseTimeMins(event.parts[i].scheduledTime);
     if (pm !== null && pm <= now) {
-      // find next part with a scheduled time
       for (let j = i + 1; j < event.parts.length; j++) {
         if (event.parts[j].scheduledTime) { nextPart = event.parts[j]; break; }
       }
@@ -210,6 +253,7 @@ async function loadEvent(eventId) {
     const data = await res.json();
     state.eventData  = data;
     state.mcFilter   = 'all';
+    state.editMode   = false;
     state.activePartId = data.parts.length ? data.parts[0].id : null;
     renderViewer(data);
     window.location.hash = eventId;
@@ -496,16 +540,71 @@ function applyLang(lang) {
     el.textContent = t(key);
   });
 
-  // Re-render MC controls if a script is loaded (to update "全員" / "All")
+  // Re-render MC controls to update "全員" / "All" label
   if (state.eventData) {
     renderMcControls(state.eventData);
   }
+
+  // Sync edit button label with current edit state
+  const editBtn = document.getElementById('edit-btn');
+  if (editBtn) {
+    const span = editBtn.querySelector('[data-i18n]');
+    if (span) span.textContent = t(state.editMode ? 'editBtnActive' : 'editBtn');
+  }
+}
+
+// ───────────────────────────────────────────────
+// Edit Mode
+// ───────────────────────────────────────────────
+function toggleEditMode() {
+  state.editMode = !state.editMode;
+
+  const scrollEl  = document.getElementById('script-scroll');
+  const warningEl = document.getElementById('edit-warning');
+  const editBtn   = document.getElementById('edit-btn');
+
+  if (state.editMode) {
+    scrollEl.classList.add('edit-mode');
+    warningEl.style.display = 'flex';
+    editBtn.classList.add('edit-active');
+    editBtn.querySelector('[data-i18n]').textContent = t('editBtnActive');
+    // Make all script lines editable
+    document.querySelectorAll('.seg-lines').forEach(el => {
+      el.contentEditable = 'true';
+      el.setAttribute('spellcheck', 'false');
+    });
+  } else {
+    scrollEl.classList.remove('edit-mode');
+    warningEl.style.display = 'none';
+    editBtn.classList.remove('edit-active');
+    editBtn.querySelector('[data-i18n]').textContent = t('editBtn');
+    // Remove editability
+    document.querySelectorAll('.seg-lines').forEach(el => {
+      el.contentEditable = 'false';
+    });
+  }
+}
+
+function exitEditMode() {
+  if (!state.editMode) return;
+  state.editMode = false;
+  document.getElementById('script-scroll').classList.remove('edit-mode');
+  document.getElementById('edit-warning').style.display = 'none';
+  const editBtn = document.getElementById('edit-btn');
+  if (editBtn) {
+    editBtn.classList.remove('edit-active');
+    editBtn.querySelector('[data-i18n]').textContent = t('editBtn');
+  }
+  document.querySelectorAll('.seg-lines').forEach(el => {
+    el.contentEditable = 'false';
+  });
 }
 
 // ───────────────────────────────────────────────
 // Back
 // ───────────────────────────────────────────────
 function goBack() {
+  exitEditMode();
   state.eventData    = null;
   state.activePartId = null;
   window.location.hash = '';

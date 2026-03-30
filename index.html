@@ -126,7 +126,20 @@
         <span class="theme-icon"></span>
       </button>
 
+      <div class="controls-sep"></div>
+
+      <!-- Edit Toggle -->
+      <button class="ctrl-btn" id="edit-btn" onclick="toggleEditMode()">
+        <span data-i18n="editBtn"></span>
+      </button>
+
     </div><!-- /#controls-bar -->
+
+    <!-- Edit Warning Banner -->
+    <div id="edit-warning" style="display:none;">
+      <span class="edit-warning-icon">&#9998;</span>
+      <span data-i18n="editWarning"></span>
+    </div>
 
     <!-- Script Content -->
     <div id="script-scroll" role="main">
