@@ -107,15 +107,6 @@
 
       <div class="controls-sep"></div>
 
-      <!-- Font Size -->
-      <div class="controls-group">
-        <button class="font-btn" onclick="changeFontSize(-1)">A−</button>
-        <button class="font-btn font-btn-reset" onclick="changeFontSize(0)" data-i18n="fontReset"></button>
-        <button class="font-btn" onclick="changeFontSize(+1)">A＋</button>
-      </div>
-
-      <div class="controls-sep"></div>
-
       <!-- Language Toggle -->
       <button class="ctrl-btn" onclick="toggleLang()" id="lang-btn" data-i18n="langSwitch"></button>
 
@@ -146,10 +137,16 @@
       <!-- Rendered by JS -->
     </div>
 
-    <!-- Floating Chapter Navigation -->
+    <!-- Floating Chapter Navigation (right) -->
     <div id="chapter-nav">
       <button class="chapter-nav-btn" id="chapter-prev" onclick="navPart(-1)" title="前のパート">▲</button>
       <button class="chapter-nav-btn" id="chapter-next" onclick="navPart(+1)" title="次のパート">▼</button>
+    </div>
+
+    <!-- Floating Font Size (left) -->
+    <div id="font-nav">
+      <button class="chapter-nav-btn" onclick="changeFontSize(+1)" title="文字を大きく">＋</button>
+      <button class="chapter-nav-btn" onclick="changeFontSize(-1)" title="文字を小さく">－</button>
     </div>
 
   </div><!-- /#viewer-screen -->

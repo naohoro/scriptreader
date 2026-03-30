@@ -609,16 +609,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-style: italic;
 }
 
-/* Floating Chapter Navigation */
-#chapter-nav {
+/* Floating Navigation Buttons (shared) */
+#chapter-nav,
+#font-nav {
   position: fixed;
   bottom: 24px;
-  right: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   z-index: 200;
 }
+
+#chapter-nav { right: 16px; }
+#font-nav    { left: 16px; }
 
 .chapter-nav-btn {
   width: 52px;
@@ -708,6 +711,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   #script-scroll { padding: 16px 24px 100px; }
   .part-section { max-width: 760px; margin: 0 auto 10px; }
   #chapter-nav { bottom: 32px; right: 24px; }
+  #font-nav    { bottom: 32px; left: 24px; }
 }
 
 @media (min-width: 1024px) {
