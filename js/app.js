@@ -1,12 +1,54 @@
 /* ===== JWWA 2026 MC Script Reader ===== */
 
+// ───────────────────────────────────────────────
+// i18n
+// ───────────────────────────────────────────────
+const I18N = {
+  ja: {
+    allMc:        '全員',
+    fontReset:    '標準',
+    langSwitch:   'EN',
+    themeToggle:  'ライト / ダーク',
+    loading:      '読み込み中...',
+    loadError:    '読み込みエラー',
+    statusBefore: (m) => m >= 60 ? `開始 ${Math.floor(m/60)}時間${m%60}分前` : `開始 ${m}分前`,
+    statusOnTime: '定刻通り',
+    statusLate:   (m) => `+${m}分 遅れ`,
+    statusWarn:   (m) => `+${m}分`,
+    statusRunning:'進行中',
+    statusEnded:  '終了',
+  },
+  en: {
+    allMc:        'All',
+    fontReset:    'Reset',
+    langSwitch:   '日本語',
+    themeToggle:  'Light / Dark',
+    loading:      'Loading...',
+    loadError:    'Load error',
+    statusBefore: (m) => m >= 60 ? `Starts in ${Math.floor(m/60)}h ${m%60}m` : `Starts in ${m}m`,
+    statusOnTime: 'On Schedule',
+    statusLate:   (m) => `+${m}m Late`,
+    statusWarn:   (m) => `+${m}m`,
+    statusRunning:'Running',
+    statusEnded:  'Ended',
+  },
+};
+
+function t(key, ...args) {
+  const dict = I18N[state.lang] || I18N.ja;
+  const val  = dict[key];
+  return typeof val === 'function' ? val(...args) : (val || key);
+}
+
+// ───────────────────────────────────────────────
 // State
+// ───────────────────────────────────────────────
 const state = {
-  theme: localStorage.getItem('theme') || 'dark',
-  fontSize: parseInt(localStorage.getItem('fontSize') || '3'),
-  mcFilter: 'all', // 'all' | 'mc1' | 'mc2'
-  eventData: null,
-  clockInterval: null,
+  theme:        localStorage.getItem('theme')    || 'light',
+  fontSize:     parseInt(localStorage.getItem('fontSize') || '3'),
+  lang:         localStorage.getItem('lang')     || 'ja',
+  mcFilter:     'all',
+  eventData:    null,
   activePartId: null,
 };
 
@@ -16,57 +58,55 @@ const state = {
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(state.theme);
   applyFontSize(state.fontSize);
+  applyLang(state.lang);
   startClock();
 
-  // Hash routing
+  // Scroll listener for active tab tracking
+  const scrollEl = document.getElementById('script-scroll');
+  if (scrollEl) {
+    scrollEl.addEventListener('scroll', () => updateActiveTabOnScroll(scrollEl), { passive: true });
+  }
+
   handleRoute();
   window.addEventListener('hashchange', handleRoute);
 });
 
 function handleRoute() {
   const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    loadEvent(hash);
-  } else {
-    showSelector();
-  }
+  if (hash) loadEvent(hash);
+  else showSelector();
 }
 
 // ───────────────────────────────────────────────
-// Clock
+// Clock & Time Status
 // ───────────────────────────────────────────────
 function startClock() {
   updateClockDisplay();
-  state.clockInterval = setInterval(updateClockDisplay, 1000);
+  setInterval(updateClockDisplay, 1000);
 }
 
 function updateClockDisplay() {
   const now = new Date();
-  const hh = String(now.getHours()).padStart(2, '0');
-  const mm = String(now.getMinutes()).padStart(2, '0');
-  const ss = String(now.getSeconds()).padStart(2, '0');
-  const timeStr = `${hh}:${mm}:${ss}`;
+  const hh  = String(now.getHours()).padStart(2, '0');
+  const mm  = String(now.getMinutes()).padStart(2, '0');
+  const ss  = String(now.getSeconds()).padStart(2, '0');
 
-  // Selector clock
   const selClock = document.getElementById('selector-clock');
-  if (selClock) selClock.textContent = timeStr;
+  if (selClock) selClock.textContent = `${hh}:${mm}:${ss}`;
 
-  // Viewer clock
   const topClock = document.getElementById('topbar-clock');
   if (topClock) topClock.textContent = `${hh}:${mm}`;
 
-  // Update time status if event loaded
   if (state.eventData) {
     updateTimeStatus(state.eventData);
-    updateActivePartTab(state.eventData);
+    updateCurrentTimePart(state.eventData);
   }
 }
 
-function parseTimeMins(timeStr) {
-  if (!timeStr) return null;
-  const m = timeStr.match(/(\d{1,2}):(\d{2})/);
-  if (!m) return null;
-  return parseInt(m[1]) * 60 + parseInt(m[2]);
+function parseTimeMins(str) {
+  if (!str) return null;
+  const m = str.match(/(\d{1,2}):(\d{2})/);
+  return m ? parseInt(m[1]) * 60 + parseInt(m[2]) : null;
 }
 
 function nowMins() {
@@ -75,80 +115,66 @@ function nowMins() {
 }
 
 function updateTimeStatus(event) {
-  const el = document.getElementById('time-status');
+  const el  = document.getElementById('time-status');
   if (!el) return;
-
-  const now = nowMins();
+  const now   = nowMins();
   const start = parseTimeMins(event.startTime);
   const end   = parseTimeMins(event.endTime);
 
   if (start !== null && now < start) {
     const diff = start - now;
-    el.textContent = diff >= 60
-      ? `開始 ${Math.floor(diff/60)}時間${diff%60}分前`
-      : `開始 ${diff}分前`;
-    el.className = 'status-before';
+    el.textContent = t('statusBefore', diff);
+    el.className   = 'status-before';
     return;
   }
   if (end !== null && now > end + 15) {
-    el.textContent = '終了';
-    el.className = 'status-before';
+    el.textContent = t('statusEnded');
+    el.className   = 'status-before';
     return;
   }
 
-  // Find current expected part
-  let currentPart = null;
-  let nextPart    = null;
+  let nextPart = null;
+  let foundCurrent = false;
 
   for (let i = 0; i < event.parts.length; i++) {
-    const p = event.parts[i];
-    const pm = parseTimeMins(p.scheduledTime);
+    const pm = parseTimeMins(event.parts[i].scheduledTime);
     if (pm !== null && pm <= now) {
-      currentPart = p;
-      // find next part with scheduledTime
+      // find next part with a scheduled time
       for (let j = i + 1; j < event.parts.length; j++) {
         if (event.parts[j].scheduledTime) { nextPart = event.parts[j]; break; }
       }
+      foundCurrent = true;
     }
   }
 
-  if (!currentPart) {
-    el.textContent = '進行中';
-    el.className = 'status-ok';
-    return;
-  }
-
-  if (nextPart && nextPart.scheduledTime) {
-    const nextMins = parseTimeMins(nextPart.scheduledTime);
-    const delta = now - nextMins; // positive = behind schedule
+  if (nextPart) {
+    const delta = now - parseTimeMins(nextPart.scheduledTime);
     if (delta > 10) {
-      el.textContent = `+${delta}分 遅れ`;
-      el.className = 'status-late';
-    } else if (delta > 3) {
-      el.textContent = `+${delta}分`;
-      el.className = 'status-warn';
-    } else if (delta > 0) {
-      el.textContent = `+${delta}分`;
-      el.className = 'status-warn';
+      el.textContent = t('statusLate', delta);
+      el.className   = 'status-late';
+    } else if (delta > 2) {
+      el.textContent = t('statusWarn', delta);
+      el.className   = 'status-warn';
     } else {
-      el.textContent = '定刻通り';
-      el.className = 'status-ok';
+      el.textContent = t('statusOnTime');
+      el.className   = 'status-ok';
     }
   } else {
-    el.textContent = '進行中';
-    el.className = 'status-ok';
+    el.textContent = foundCurrent ? t('statusRunning') : t('statusOnTime');
+    el.className   = 'status-ok';
   }
 }
 
-function updateActivePartTab(event) {
+// Highlight the part tab that corresponds to the scheduled time right now
+function updateCurrentTimePart(event) {
   const now = nowMins();
-  let activeId = null;
+  let currentId = null;
   for (const p of event.parts) {
     const pm = parseTimeMins(p.scheduledTime);
-    if (pm !== null && pm <= now) activeId = p.id;
+    if (pm !== null && pm <= now) currentId = p.id;
   }
   document.querySelectorAll('.part-tab').forEach(btn => {
-    btn.classList.toggle('current-time', btn.dataset.partId === activeId);
+    btn.classList.toggle('current-time', btn.dataset.partId === currentId);
   });
 }
 
@@ -156,18 +182,16 @@ function updateActivePartTab(event) {
 // Selector Screen
 // ───────────────────────────────────────────────
 function showSelector() {
-  state.eventData = null;
+  state.eventData    = null;
+  state.activePartId = null;
   document.getElementById('selector-screen').style.display = 'flex';
-  document.getElementById('viewer-screen').style.display = 'none';
-  document.getElementById('selector-date').textContent = formatDateJP(new Date());
+  document.getElementById('viewer-screen').style.display   = 'none';
+  document.getElementById('selector-date').textContent     = formatDateJP(new Date());
 }
 
 function formatDateJP(date) {
   const days = ['日', '月', '火', '水', '木', '金', '土'];
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  const wd = days[date.getDay()];
-  return `${m}月${d}日（${wd}）`;
+  return `${date.getMonth()+1}月${date.getDate()}日（${days[date.getDay()]}）`;
 }
 
 // ───────────────────────────────────────────────
@@ -175,23 +199,23 @@ function formatDateJP(date) {
 // ───────────────────────────────────────────────
 async function loadEvent(eventId) {
   document.getElementById('selector-screen').style.display = 'none';
-
   const viewer = document.getElementById('viewer-screen');
   viewer.style.display = 'flex';
   document.getElementById('script-scroll').innerHTML =
-    '<div class="loading">読み込み中...</div>';
+    `<div class="loading">${t('loading')}</div>`;
 
   try {
-    const res = await fetch(`data/${eventId}.json`);
+    const res  = await fetch(`data/${eventId}.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    state.eventData = data;
-    state.mcFilter  = 'all';
+    state.eventData  = data;
+    state.mcFilter   = 'all';
+    state.activePartId = data.parts.length ? data.parts[0].id : null;
     renderViewer(data);
     window.location.hash = eventId;
   } catch (e) {
     document.getElementById('script-scroll').innerHTML =
-      `<div class="loading">読み込みエラー: ${e.message}</div>`;
+      `<div class="loading">${t('loadError')}: ${e.message}</div>`;
   }
 }
 
@@ -199,19 +223,14 @@ async function loadEvent(eventId) {
 // Render Viewer
 // ───────────────────────────────────────────────
 function renderViewer(data) {
-  // Top bar
   document.getElementById('topbar-event-title').textContent = data.title;
-  document.getElementById('topbar-part-hint').textContent =
+  document.getElementById('topbar-part-hint').textContent   =
     `${data.date}　${data.startTime} — ${data.endTime}`;
 
-  // Part tabs
   renderPartTabs(data);
-
-  // MC controls
   renderMcControls(data);
-
-  // Script
   renderScript(data);
+  updateNavBtnState();
 }
 
 function renderPartTabs(data) {
@@ -219,32 +238,32 @@ function renderPartTabs(data) {
   container.innerHTML = '';
   data.parts.forEach(part => {
     const btn = document.createElement('button');
-    btn.className = 'part-tab';
-    btn.dataset.partId = part.id;
-
-    // Short label: extract "P1" from "PART 1..."
+    btn.className       = 'part-tab';
+    btn.dataset.partId  = part.id;
     const m = part.title.match(/PART\s*(\d+)/i);
-    btn.textContent = m ? `P${m[1]}` : part.id.replace('part', 'P');
-    btn.title = part.title;
-
+    btn.textContent     = m ? `P${m[1]}` : part.id.replace('part', 'P');
+    btn.title           = part.title;
     btn.addEventListener('click', () => scrollToPart(part.id));
     container.appendChild(btn);
   });
+  // Activate first tab
+  const firstTab = container.querySelector('.part-tab');
+  if (firstTab) firstTab.classList.add('active');
 }
 
 function renderMcControls(data) {
   const group = document.getElementById('mc-filter-group');
   group.innerHTML = '';
 
-  const filters = [{ id: 'all', label: '全員' }];
+  const filters = [{ id: 'all', label: t('allMc') }];
   if (data.mc1) filters.push({ id: 'mc1', label: data.mc1.name });
   if (data.mc2) filters.push({ id: 'mc2', label: data.mc2.name });
 
   filters.forEach(f => {
     const btn = document.createElement('button');
-    btn.className = `mc-filter-btn`;
+    btn.className    = 'mc-filter-btn';
     btn.dataset.filter = f.id;
-    btn.textContent = f.label;
+    btn.textContent  = f.label;
     btn.addEventListener('click', () => setMcFilter(f.id));
     group.appendChild(btn);
   });
@@ -259,21 +278,17 @@ function renderScript(data) {
   data.parts.forEach(part => {
     const section = document.createElement('div');
     section.className = 'part-section';
-    section.id = part.id;
+    section.id        = part.id;
 
-    // Part header
-    const header = document.createElement('div');
+    // Header
+    const header  = document.createElement('div');
     header.className = 'part-header';
-
-    const numMatch = part.title.match(/PART\s*(\d+)/i);
-    const numLabel = numMatch ? `PART ${numMatch[1]}` : part.id.toUpperCase();
-
-    // Clean title text (remove PART N and time at end)
-    let titleText = part.title
+    const numMatch   = part.title.match(/PART\s*(\d+)/i);
+    const numLabel   = numMatch ? `PART ${numMatch[1]}` : part.id.toUpperCase();
+    let titleText    = part.title
       .replace(/^PART\s*\d+\s*/i, '')
       .replace(/[\s　]+\d{1,2}:\d{2}\s*[—–-]?\s*$/, '')
-      .trim();
-    if (!titleText) titleText = part.title;
+      .trim() || part.title;
 
     header.innerHTML = `
       <span class="part-number">${numLabel}</span>
@@ -283,46 +298,42 @@ function renderScript(data) {
     section.appendChild(header);
 
     // Rows
-    part.rows.forEach((row, ri) => {
+    part.rows.forEach(row => {
       const rowEl = document.createElement('div');
       rowEl.className = 'script-row';
 
-      // Time
       const timeEl = document.createElement('div');
-      timeEl.className = 'row-time';
+      timeEl.className   = 'row-time';
       timeEl.textContent = row.time || '';
       rowEl.appendChild(timeEl);
 
-      // Body
       const bodyEl = document.createElement('div');
       bodyEl.className = 'row-body';
 
-      // Action
       if (row.action) {
         const actionEl = document.createElement('div');
-        actionEl.className = 'row-action';
+        actionEl.className   = 'row-action';
         actionEl.textContent = row.action;
         actionEl.addEventListener('click', () => actionEl.classList.toggle('hidden'));
         bodyEl.appendChild(actionEl);
       }
 
-      // Script segments
       const scriptEl = document.createElement('div');
       scriptEl.className = 'row-script';
 
       row.script.forEach(seg => {
         if (!seg.lines.length) return;
         const segEl = document.createElement('div');
-        segEl.className = `script-segment segment-${seg.type}`;
-        segEl.dataset.segType = seg.type;
+        segEl.className        = `script-segment segment-${seg.type}`;
+        segEl.dataset.segType  = seg.type;
 
         const labelEl = document.createElement('div');
-        labelEl.className = 'seg-label';
+        labelEl.className   = 'seg-label';
         labelEl.textContent = seg.speaker || seg.type.toUpperCase();
         segEl.appendChild(labelEl);
 
         const linesEl = document.createElement('div');
-        linesEl.className = 'seg-lines';
+        linesEl.className   = 'seg-lines';
         linesEl.textContent = seg.lines.join('\n');
         segEl.appendChild(linesEl);
 
@@ -337,7 +348,6 @@ function renderScript(data) {
     container.appendChild(section);
   });
 
-  // Apply current filter
   applyMcFilterUI();
 }
 
@@ -352,16 +362,12 @@ function setMcFilter(filter) {
 function applyMcFilterUI() {
   const filter = state.mcFilter;
 
-  // Update buttons
   document.querySelectorAll('.mc-filter-btn').forEach(btn => {
     const f = btn.dataset.filter;
     btn.classList.remove('active-all', 'active-mc1', 'active-mc2');
-    if (f === filter) {
-      btn.classList.add(`active-${filter === 'all' ? 'all' : filter}`);
-    }
+    if (f === filter) btn.classList.add(`active-${filter}`);
   });
 
-  // Update segments
   document.querySelectorAll('.script-segment').forEach(seg => {
     const t = seg.dataset.segType;
     if (filter === 'all') {
@@ -378,59 +384,73 @@ function applyMcFilterUI() {
 // Part Navigation
 // ───────────────────────────────────────────────
 function scrollToPart(partId) {
-  const el = document.getElementById(partId);
-  if (el) {
-    const scroll = document.getElementById('script-scroll');
-    const top = el.offsetTop - scroll.offsetTop;
-    scroll.scrollTo({ top, behavior: 'smooth' });
-    state.activePartId = partId;
+  const scrollEl = document.getElementById('script-scroll');
+  const el       = document.getElementById(partId);
+  if (!el || !scrollEl) return;
 
-    // Highlight tab
-    document.querySelectorAll('.part-tab').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.partId === partId);
-    });
+  scrollEl.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
+  state.activePartId = partId;
+
+  document.querySelectorAll('.part-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.partId === partId);
+  });
+
+  // Bring active tab into view
+  const activeTab = document.querySelector(`.part-tab[data-part-id="${partId}"]`);
+  if (activeTab) {
+    activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+
+  updateNavBtnState();
+}
+
+function navPart(direction) {
+  if (!state.eventData) return;
+  const parts   = state.eventData.parts;
+  const current = state.activePartId || (parts.length ? parts[0].id : null);
+  const idx     = parts.findIndex(p => p.id === current);
+  const nextIdx = idx + direction;
+  if (nextIdx >= 0 && nextIdx < parts.length) {
+    scrollToPart(parts[nextIdx].id);
   }
 }
 
-// Update active tab on scroll
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const scrollEl = document.getElementById('script-scroll');
-    if (scrollEl) {
-      scrollEl.addEventListener('scroll', () => {
-        updateActiveTabOnScroll(scrollEl);
-      }, { passive: true });
-    }
-  }, 500);
-});
+function updateNavBtnState() {
+  if (!state.eventData) return;
+  const parts = state.eventData.parts;
+  const idx   = parts.findIndex(p => p.id === state.activePartId);
+  const prevBtn = document.getElementById('chapter-prev');
+  const nextBtn = document.getElementById('chapter-next');
+  if (prevBtn) prevBtn.disabled = idx <= 0;
+  if (nextBtn) nextBtn.disabled = idx >= parts.length - 1;
+}
 
 function updateActiveTabOnScroll(scrollEl) {
   if (!state.eventData) return;
   const scrollTop = scrollEl.scrollTop;
-  let activeId = null;
+  let activeId    = null;
+
   for (const part of state.eventData.parts) {
     const el = document.getElementById(part.id);
-    if (el && el.offsetTop - scrollEl.offsetTop <= scrollTop + 80) {
-      activeId = part.id;
-    }
+    if (el && el.offsetTop <= scrollTop + 100) activeId = part.id;
   }
-  if (activeId) {
+
+  if (activeId && activeId !== state.activePartId) {
+    state.activePartId = activeId;
     document.querySelectorAll('.part-tab').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.partId === activeId);
     });
-    // Scroll tab into view
-    const activeTab = document.querySelector(`.part-tab[data-part-id="${activeId}"]`);
-    if (activeTab) {
-      activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    }
+    const tab = document.querySelector(`.part-tab[data-part-id="${activeId}"]`);
+    if (tab) tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    updateNavBtnState();
   }
 }
 
 // ───────────────────────────────────────────────
-// Font Size
+// Font Size (7 levels)
 // ───────────────────────────────────────────────
 function changeFontSize(delta) {
-  const next = delta === 0 ? 3 : Math.min(5, Math.max(1, state.fontSize + delta));
+  const next = delta === 0 ? 3 : Math.min(7, Math.max(1, state.fontSize + delta));
   state.fontSize = next;
   localStorage.setItem('fontSize', next);
   applyFontSize(next);
@@ -452,15 +472,42 @@ function toggleTheme() {
 
 function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
-  const icons = document.querySelectorAll('.theme-icon');
-  icons.forEach(el => { el.textContent = theme === 'dark' ? '☀' : '☾'; });
+  document.querySelectorAll('.theme-icon').forEach(el => {
+    el.textContent = theme === 'dark' ? '☀' : '☾';
+  });
+}
+
+// ───────────────────────────────────────────────
+// Language
+// ───────────────────────────────────────────────
+function toggleLang() {
+  const next = state.lang === 'ja' ? 'en' : 'ja';
+  state.lang = next;
+  localStorage.setItem('lang', next);
+  applyLang(next);
+}
+
+function applyLang(lang) {
+  document.documentElement.lang = lang;
+
+  // Update static i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    el.textContent = t(key);
+  });
+
+  // Re-render MC controls if a script is loaded (to update "全員" / "All")
+  if (state.eventData) {
+    renderMcControls(state.eventData);
+  }
 }
 
 // ───────────────────────────────────────────────
 // Back
 // ───────────────────────────────────────────────
 function goBack() {
-  state.eventData = null;
+  state.eventData    = null;
+  state.activePartId = null;
   window.location.hash = '';
   showSelector();
 }
