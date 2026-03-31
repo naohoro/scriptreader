@@ -21,6 +21,7 @@ const I18N = {
     editBtn:         '編集',
     editBtnActive:   '編集中',
     editWarning:     'このページを閉じると原稿はリセットされます',
+    actionLabel:     'スタッフ指示',
   },
   en: {
     allMc:           'All',
@@ -39,8 +40,66 @@ const I18N = {
     editBtn:         'Edit',
     editBtnActive:   'Editing',
     editWarning:     'Edits will be lost when you close this page',
+    actionLabel:     'Stage Direction',
   },
 };
+
+// ───────────────────────────────────────────────
+// Event & Part English Translations
+// ───────────────────────────────────────────────
+const EVENT_EN = {
+  zenjasai: {
+    title:  'Eve Party',
+    date:   'April 3, 2026 (Fri)',
+    venue:  'Hotel Nikko Himeji — Kōrin Room (3F)',
+    parts: {
+      part1: 'Welcome Reception',
+      part2: 'Opening / President Murakami / Special Announcement',
+      part3: 'Guest Speeches',
+      part4: 'Ceremony — Belt Presentation / Toast',
+      part5: 'Kimono Butcher Cutting Show',
+      part6: 'Brand Wagyu Tasting',
+      part7: 'Yosakoi Performance',
+      part8: 'Closing',
+    },
+  },
+  toujitsu: {
+    title:  'Auction Day',
+    date:   'April 4, 2026 (Sat)',
+    venue:  'Wagyu Master Co., Ltd.',
+    parts: {
+      part1: 'Pre-Auction Announcement',
+      part2: 'Auction Overview — Mr. Yamaji',
+      part3: 'Opening / Guest Speeches — Murakami / Mino',
+      part4: 'Auction Opens',
+      part5: 'KOBE BEEF Section',
+      part6: 'Brand Wagyu Section',
+      part7: 'Grand Champion — Murakami Shinnosuke Award',
+      part8: 'Closing / Transition to Hanami Banquet',
+    },
+  },
+  hanami: {
+    title:  'Hanami Banquet',
+    date:   'April 4, 2026 (Sat)',
+    venue:  'Himeji City Wagyu Master Meat Center',
+    parts: {
+      part1:  'Opening Announcement',
+      part2:  'Toast',
+      part3:  'Guest Speeches',
+      part4:  'Award Ceremony',
+      part5:  'Iyori Farm Introduction',
+      part6:  'Vendor Introductions',
+      part7:  'Dinner & Hibiki Taiko',
+      part8:  'Shuttle Bus Announcement',
+      part9:  'Bingo Game',
+      part10: 'Shuttle Bus / Closing',
+    },
+  },
+};
+
+function getEventEn(eventId) {
+  return EVENT_EN[eventId] || {};
+}
 
 function t(key, ...args) {
   const dict = I18N[state.lang] || I18N.ja;
@@ -267,9 +326,13 @@ async function loadEvent(eventId) {
 // Render Viewer
 // ───────────────────────────────────────────────
 function renderViewer(data) {
-  document.getElementById('topbar-event-title').textContent = data.title;
-  document.getElementById('topbar-part-hint').textContent   =
-    `${data.date}　${data.startTime} — ${data.endTime}`;
+  const en   = getEventEn(data.id);
+  const isEn = state.lang === 'en';
+
+  document.getElementById('topbar-event-title').textContent =
+    isEn ? (en.title || data.title) : data.title;
+  document.getElementById('topbar-part-hint').textContent =
+    `${isEn ? (en.date || data.date) : data.date}  ${data.startTime} — ${data.endTime}`;
 
   renderPartTabs(data);
   renderMcControls(data);
@@ -319,6 +382,9 @@ function renderScript(data) {
   const container = document.getElementById('script-scroll');
   container.innerHTML = '';
 
+  const en   = getEventEn(data.id);
+  const isEn = state.lang === 'en';
+
   data.parts.forEach(part => {
     const section = document.createElement('div');
     section.className = 'part-section';
@@ -329,10 +395,9 @@ function renderScript(data) {
     header.className = 'part-header';
     const numMatch   = part.title.match(/PART\s*(\d+)/i);
     const numLabel   = numMatch ? `PART ${numMatch[1]}` : part.id.toUpperCase();
-    let titleText    = part.title
-      .replace(/^PART\s*\d+\s*/i, '')
-      .replace(/[\s　]+\d{1,2}:\d{2}\s*[—–-]?\s*$/, '')
-      .trim() || part.title;
+    let titleText = isEn
+      ? (en.parts?.[part.id] || extractEnglishFromTitle(part.title) || cleanPartTitle(part.title))
+      : cleanPartTitle(part.title);
 
     header.innerHTML = `
       <span class="part-number">${numLabel}</span>
@@ -355,11 +420,39 @@ function renderScript(data) {
       bodyEl.className = 'row-body';
 
       if (row.action) {
-        const actionEl = document.createElement('div');
-        actionEl.className   = 'row-action';
-        actionEl.textContent = row.action;
-        actionEl.addEventListener('click', () => actionEl.classList.toggle('hidden'));
-        bodyEl.appendChild(actionEl);
+        const wrapperEl = document.createElement('div');
+        wrapperEl.className = 'row-action-wrapper';
+
+        // Toggle button — always visible
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'row-action-toggle';
+
+        const iconSpan = document.createElement('span');
+        iconSpan.className   = 'action-toggle-icon open';
+        iconSpan.textContent = '▼';
+
+        const labelSpan = document.createElement('span');
+        labelSpan.className       = 'action-toggle-label';
+        labelSpan.dataset.i18n    = 'actionLabel';
+        labelSpan.textContent     = t('actionLabel');
+
+        toggleBtn.appendChild(iconSpan);
+        toggleBtn.appendChild(labelSpan);
+
+        // Collapsible content
+        const contentEl = document.createElement('div');
+        contentEl.className   = 'row-action-content';
+        contentEl.textContent = row.action;
+
+        toggleBtn.addEventListener('click', () => {
+          const isNowCollapsed = contentEl.classList.toggle('collapsed');
+          iconSpan.className   = `action-toggle-icon ${isNowCollapsed ? 'closed' : 'open'}`;
+          iconSpan.textContent = isNowCollapsed ? '▶' : '▼';
+        });
+
+        wrapperEl.appendChild(toggleBtn);
+        wrapperEl.appendChild(contentEl);
+        bodyEl.appendChild(wrapperEl);
       }
 
       const scriptEl = document.createElement('div');
@@ -534,15 +627,20 @@ function toggleLang() {
 function applyLang(lang) {
   document.documentElement.lang = lang;
 
-  // Update static i18n elements
+  // Update static i18n elements (UI labels)
   document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    el.textContent = t(key);
+    el.textContent = t(el.dataset.i18n);
   });
 
-  // Re-render MC controls to update "全員" / "All" label
+  // Update bilingual elements (data-ja / data-en)
+  document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+    el.textContent = lang === 'en' ? el.dataset.en : el.dataset.ja;
+  });
+
+  // Re-render viewer content if an event is loaded
   if (state.eventData) {
     renderMcControls(state.eventData);
+    refreshViewerTitles(state.eventData);
   }
 
   // Sync edit button label with current edit state
@@ -551,6 +649,38 @@ function applyLang(lang) {
     const span = editBtn.querySelector('[data-i18n]');
     if (span) span.textContent = t(state.editMode ? 'editBtnActive' : 'editBtn');
   }
+}
+
+// Re-apply language to titles already rendered in the viewer
+function refreshViewerTitles(data) {
+  const en    = getEventEn(data.id);
+  const isEn  = state.lang === 'en';
+
+  // Topbar event title
+  const titleEl = document.getElementById('topbar-event-title');
+  if (titleEl) titleEl.textContent = isEn ? (en.title || data.title) : data.title;
+
+  // Topbar date/time hint
+  const hintEl = document.getElementById('topbar-part-hint');
+  if (hintEl) {
+    const dateStr = isEn ? (en.date || data.date) : data.date;
+    hintEl.textContent = `${dateStr}  ${data.startTime} — ${data.endTime}`;
+  }
+
+  // Part headers
+  data.parts.forEach(part => {
+    const section = document.getElementById(part.id);
+    if (!section) return;
+    const titleSpan = section.querySelector('.part-title-text');
+    if (titleSpan) {
+      titleSpan.textContent = isEn
+        ? (en.parts?.[part.id] || extractEnglishFromTitle(part.title) || titleSpan.textContent)
+        : cleanPartTitle(part.title);
+    }
+  });
+
+  // Part tabs — use abbreviated part numbers (already language-neutral "P1"…)
+  // No change needed for tabs
 }
 
 // ───────────────────────────────────────────────
@@ -614,6 +744,22 @@ function goBack() {
 // ───────────────────────────────────────────────
 // Helpers
 // ───────────────────────────────────────────────
+
+// Remove "PART N" prefix and trailing time from a part title
+function cleanPartTitle(title) {
+  return title
+    .replace(/^PART\s*\d+\s*/i, '')
+    .replace(/[\s　]+\d{1,2}:\d{2}\s*[—–-]?\s*$/, '')
+    .trim() || title;
+}
+
+// Extract English portion from bilingual titles like "概要説明  /  Auction Overview"
+function extractEnglishFromTitle(title) {
+  // Pattern: Japanese  /  English
+  const m = title.match(/\/\s*([A-Za-z].+?)(?:\s*\d{1,2}:\d{2})?$/);
+  return m ? m[1].trim() : null;
+}
+
 function escHtml(str) {
   return str
     .replace(/&/g, '&amp;')

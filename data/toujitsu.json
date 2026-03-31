@@ -19,7 +19,7 @@
       "scheduledTime": null,
       "rows": [
         {
-          "time": "10:10",
+          "time": "10:20",
           "action": "事前アナウンス\nMarika 読み上げ\n（日→英）\n会場内 BGM\n小さめで流す",
           "script": [
             {

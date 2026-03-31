@@ -503,11 +503,75 @@
     },
     {
       "id": "part6",
-      "title": "PART 6　出店事業者 ご紹介　13:00 —",
-      "scheduledTime": "13:00",
+      "title": "PART 6　響 太鼓　12:57 —　★ 13:00前スタート必須",
+      "scheduledTime": "12:57",
       "rows": [
         {
-          "time": "13:00",
+          "time": "12:57",
+          "action": "響 太鼓チーム\nスタンバイ確認\n照明・音響確認\nMCは舞台袖へ\n★ 13:00前スタート\n必須",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "続きまして、特別なパフォーマンスをご覧いただきます。",
+                "太鼓演奏グループ「響」の皆さんです。どうぞ！"
+              ]
+            },
+            {
+              "speaker": "Horota",
+              "type": "mc2",
+              "lines": [
+                "We have a very special performance for you.",
+                "Please welcome the taiko drum group \"Hibiki\"!"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "12:58\n〜\n13:18",
+          "action": "響 太鼓 演奏\n（約20分）\nMC 舞台袖待機\n★ 演奏は13:00前に\nスタートすること",
+          "script": [
+            {
+              "speaker": "≪ 響 太鼓 演奏 ≫",
+              "type": "note",
+              "lines": [
+                "約20分　（12:58スタート → 13:18終了目安）",
+                "終了後 → MCが戻ってお礼アナウンス"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "13:18",
+          "action": "演奏終了\n盛大な拍手",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "響の皆さん、素晴らしい演奏をありがとうございました！"
+              ]
+            },
+            {
+              "speaker": "Horota",
+              "type": "mc2",
+              "lines": [
+                "Hibiki — thank you for that incredible performance!",
+                "One more round of applause, everyone!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part7",
+      "title": "PART 7　出店事業者 ご紹介 ／ 会食・歓談　13:20 —",
+      "scheduledTime": "13:20",
+      "rows": [
+        {
+          "time": "13:20",
           "action": "各ブース\nスタンバイ確認",
           "script": [
             {
@@ -538,9 +602,9 @@
                 "· Kobe Beef Yakiniku         (Kobe Beef Marketing & Distribution Assoc.)",
                 "· Sukiyaki Bowl              (Asakusa Imahan)",
                 "· Kobe Beef Croquettes       (Urai Shoten)",
-                "· Grilled Skewers               (Kushi no Ya)",
+                "· Grilled Skewers            (Kushi no Ya)",
                 "· Roast Pork                 (Shinsei Koshi)",
-                "· Ibonoito Soup Noodles       (Asahi Foods Industry)",
+                "· Ibonoito Soup Noodles      (Asahi Foods Industry)",
                 "· Fresh Fruits               (ZEN-NOH Hyogo Horticultural Dept.)",
                 "· Soft Serve Ice Cream       (ZEN-NOH Hyogo Livestock Dept.)",
                 "· Sake, Beer & Wine          (Tanaka Shoten)",
@@ -549,80 +613,16 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "part7",
-      "title": "PART 7　会食・歓談 ／ 響 太鼓　13:05 —",
-      "scheduledTime": "13:05",
-      "rows": [
+        },
         {
-          "time": "13:05\n〜\n13:15",
+          "time": "13:25\n〜\n13:40",
           "action": "自由歓談・会食\n但馬牛写真撮影エリア開放\nMCはフロアを巡回\n（保呂田と同行）",
           "script": [
             {
               "speaker": "（フリータイム）",
               "type": "note",
               "lines": [
-                "中川・Horota　フロアを巡回し、国際バイヤーと交流\n（保呂田と同行）"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "13:15",
-          "action": "響 太鼓チーム\nスタンバイ確認\n照明・音響確認\nMCは舞台袖へ",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "続きまして、特別なパフォーマンスをご覧いただきます。",
-                "太鼓演奏グループ「響」の皆さんです。どうぞ！"
-              ]
-            },
-            {
-              "speaker": "Horota",
-              "type": "mc2",
-              "lines": [
-                "We have a very special performance for you.",
-                "Please welcome the taiko drum group \"Hibiki\"!"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "13:15\n〜\n13:35",
-          "action": "響 太鼓 演奏\n（約20分）\nMC 舞台袖待機",
-          "script": [
-            {
-              "speaker": "≪ 響 太鼓 演奏 ≫",
-              "type": "note",
-              "lines": [
-                "約20分",
-                "終了後 → MCが戻ってお礼アナウンス"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "13:35",
-          "action": "演奏終了\n盛大な拍手",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "響の皆さん、素晴らしい演奏をありがとうございました！"
-              ]
-            },
-            {
-              "speaker": "Horota",
-              "type": "mc2",
-              "lines": [
-                "Hibiki — thank you for that incredible performance!",
-                "One more round of applause, everyone!"
+                "中川・Horota　フロアを巡回し、国際バイヤーと交流（保呂田と同行）"
               ]
             }
           ]

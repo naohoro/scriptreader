@@ -208,23 +208,6 @@
         },
         {
           "time": "18:16",
-          "action": "引き続き壇上\n照明キープ",
-          "script": [
-            {
-              "speaker": "Justin",
-              "type": "mc1",
-              "lines": [
-                "And there is one more announcement tonight.",
-                "S Foods is proud to declare \"KOBE BEEF VISION\" —",
-                "a commitment to lead Japanese livestock farming through animal welfare,",
-                "sustainability, and the continued elevation of the Kobe Beef brand.",
-                "The future of Japanese Wagyu starts now."
-              ]
-            }
-          ]
-        },
-        {
-          "time": "18:18",
           "action": "村上社長　降壇\n盛大な拍手\n照明：全体へ",
           "script": [
             {
