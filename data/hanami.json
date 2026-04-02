@@ -21,7 +21,47 @@
       "id": "part1",
       "title": "PART 1　開宴アナウンス　12:30 —",
       "scheduledTime": "12:30",
-      "rows": []
+      "rows": [
+        {
+          "time": "12:30",
+          "action": "BGM開始\nMC ステージへ\n照明：会場全体\n★ 雨天の場合\n傘置き場の\n案内を追加",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "ご案内申し上げます。",
+                "ただいまより「Japanese Wagyu World Auction 花見の宴」を開会いたします。",
+                "（▶ 晴天の場合：「日本の四季の中でもっとも美しいこの時期に、桜も咲き始めております。満開の桜の下、存分にお楽しみください。」）",
+                "（▶ 雨天の場合：「あいにくの雨模様となりましたが、このような中お越しいただきました皆様に、心より感謝申し上げます。屋外開催は変わらず予定通り進めてまいります。お足元にはどうぞお気をつけください。」）",
+                "本日は皆さま、美味しいお肉やお食事、そして会話をお楽しみください。",
+                "のちほど、太鼓演奏、そして万国共通のビンゴゲームもご用意しております。",
+                "終了は14時30分を予定しております。",
+                "また、姫路駅への送迎シャトルバスをご用意しております。",
+                "出発時刻は　①13時00分　②14時00分　③15時00分　の3便です。",
+                "会場前の道路に停車いたします。どうぞご利用ください。"
+              ]
+            },
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "Good afternoon, everyone.",
+                "We are pleased to open the",
+                "\"Japanese Wagyu World Auction Cherry Blossom Viewing Party.\"",
+                "(▶ Fine weather: \"This is the most beautiful time of year in Japan, and the cherry blossoms are in full bloom around us.\")",
+                "(▶ Rainy weather: \"Despite the rain today, we are truly grateful that you have all joined us here. The event will continue outdoors as planned — please watch your step.\")",
+                "Please enjoy the food and the great company.",
+                "We have a taiko drum performance and a bingo game planned for later.",
+                "The party is scheduled to end at 2:30 PM.",
+                "Shuttle buses to JR Himeji Station are available at:",
+                "① 1:00 PM　② 2:00 PM　③ 3:00 PM",
+                "Buses will be waiting just outside the venue along the main road."
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "part2",
@@ -585,7 +625,7 @@
                 "・神戸ビーフコロッケ　（浦井商店）",
                 "・串焼き　　　　　　　（串の屋）",
                 "・焼き豚　　　　　　　（新生公司）",
-                "・揖保乃糸 にゅうめん　（朝日食品工業）",
+                "・揖保乃糸 にゅうめん　（関西食品株式会社）",
                 "・フルーツ　　　　　　（全農兵庫園芸部）",
                 "・ソフトクリーム　　　（全農兵庫畜産部）",
                 "・お酒・ビール・ワイン（田中商店）",

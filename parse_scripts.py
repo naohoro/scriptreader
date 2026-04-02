@@ -121,7 +121,7 @@ def parse_action_cell(cell):
 
 def is_header_row(row):
     texts = [c.text.strip() for c in row.cells[:min(3, len(row.cells))]]
-    return any("時刻" in t for t in texts) and any("進行" in t or "MC" in t or "アナウンス" in t for t in texts)
+    return "時刻" in texts[0] and any("進行" in t or "MC" in t or "アナウンス" in t for t in texts[1:])
 
 
 def is_merged_header_row(row):
