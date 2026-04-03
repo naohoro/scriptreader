@@ -108,10 +108,30 @@
                 "We now open the Japanese Wagyu World Auction.",
                 "Please welcome",
                 "the Chairman of the Executive Committee,",
-                "Mr. Shinnosuke Murakami.",
-                "note",
-                "（村上委員長　あいさつ中）",
-                "★ 日本語で簡単にご挨拶"
+                "Mr. Shinnosuke Murakami."
+              ]
+            },
+            {
+              "speaker": "村上委員長　ご挨拶",
+              "type": "note",
+              "lines": [
+                "昨年に引き続き、４回目のワールドオークションを開催いたします。",
+                "本日は、２１のブランド牛　７２頭を準備いたしております。",
+                "多くの生産者の方のご協力により、大変優秀な和牛を取り揃えております。",
+                "皆様の積極的なご購買をお願いいたします。",
+                "ワールドオークション　スタート‼"
+              ]
+            },
+            {
+              "speaker": "（英訳）",
+              "type": "note",
+              "lines": [
+                "We are delighted to hold the 4th World Auction, continuing from last year.",
+                "Today, we have prepared 72 heads from 21 wagyu brands.",
+                "Thanks to the cooperation of many dedicated producers,",
+                "we have assembled a truly outstanding selection of wagyu.",
+                "We look forward to your enthusiastic bidding.",
+                "Let the World Auction begin!"
               ]
             },
             {
