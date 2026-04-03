@@ -32,6 +32,7 @@
               "lines": [
                 "ご案内申し上げます。",
                 "ただいまより「ジャパニーズ・和牛・ワールド・オークション　花見の宴」を開会いたします。",
+                "本日の司会を務めます、中川と申します。どうぞよろしくお願いいたします。",
                 "日本の四季の中でもっとも美しいこの時期に、桜も咲き始めております。",
                 "本日は、あいにくの雨模様となってしまいましたが、皆様の元気な笑顔で、この雨を吹き飛ばしましょう。",
                 "そして、どうぞごゆっくりと、美味しいお肉やお食事、景色、そして会話をお楽しみください。",
@@ -49,12 +50,14 @@
                 "Good afternoon, everyone.",
                 "We are pleased to open the",
                 "\"Japanese Wagyu World Auction — Cherry Blossom Viewing Party.\"",
+                "My name is Nao Horota, and I'll be your English host for today.",
+                "Together with my co-host 中川, we hope you enjoy the afternoon.",
                 "This is the most beautiful time of year in Japan,",
                 "and the cherry blossoms are beginning to bloom around us.",
                 "Unfortunately, it's raining today,",
                 "but let's blow off the rain with all of your big smiles.",
                 "Please enjoy the food, the scenery, and the great company.",
-                "We have a Japanese taiko drum performance",
+                "We have a taiko drum performance coming up right away,",
                 "and a bingo game for later.",
                 "The party is scheduled to end at 2:30 PM.",
                 "Shuttle buses to JR Himeji Station are available at:",
@@ -68,11 +71,80 @@
     },
     {
       "id": "part2",
-      "title": "PART 2　ご挨拶 ＋ 乾杯　12:35 —",
+      "title": "PART 2　太鼓演奏「響」　オープニング　12:35 —",
       "scheduledTime": "12:35",
       "rows": [
         {
           "time": "12:35",
+          "action": "保呂田氏\nステージへ\n照明・音響\nスタンバイ確認\n★ 13:00前に\nスタートすること",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "それでは、本日の開演に際しまして、オープニングとして特別なパフォーマンスをご覧いただきます。",
+                "宮崎を拠点に活動する橘太鼓「響座（ひびきざ）」は、1991年に結成した和太鼓集団です。",
+                "日本国内のみならず、海外公演も多数行う実力派の皆さんです。",
+                "「響（ひびき）」の皆さんです。どうぞ！"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "To open today's celebration, we have a very special performance for you.",
+                "Our guests are Tachibana Taiko \"Hibikiza\" —",
+                "a taiko drum ensemble founded in 1991, based in Miyazaki, Japan.",
+                "They perform not only across Japan, but on international stages as well.",
+                "Please welcome — \"Hibiki\"!"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "12:35\n〜\n〜12:55",
+          "action": "≪ 響 太鼓 演奏 ≫\n約20分\nMC フロアへ",
+          "script": [
+            {
+              "speaker": "≪ 響 太鼓 演奏 ≫",
+              "type": "note",
+              "lines": [
+                "約20分",
+                "演奏終了後 → MCがステージに戻りお礼アナウンス"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "〜12:55",
+          "action": "演奏終了\n大きな拍手",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "響（ひびき）の皆さん、素晴らしい演奏をありがとうございました！"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "Hibiki — thank you for that incredible performance!",
+                "One more round of applause, everyone!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part3",
+      "title": "PART 3　ご挨拶 ＋ 乾杯　〜13:00 —",
+      "scheduledTime": "13:00",
+      "rows": [
+        {
+          "time": "〜13:00",
           "action": "西村議員\nスタンバイ確認\n（花見乾杯ご挨拶）",
           "script": [
             {
@@ -131,104 +203,9 @@
       ]
     },
     {
-      "id": "part3",
-      "title": "PART 3　シャトルバス案内（13:00便）　12:40 —",
-      "scheduledTime": "12:40",
-      "rows": [
-        {
-          "time": "12:40",
-          "action": "バス出発前案内\n（13時便）",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "それではここで、シャトルバスのご案内をいたします。",
-                "JR姫路駅行きのシャトルバスがまもなく出発いたします。",
-                "13時出発のバスをご利用の方は、会場前の道路にお集まりください。"
-              ]
-            },
-            {
-              "speaker": "保呂田",
-              "type": "note",
-              "lines": [
-                "The shuttle bus to JR Himeji Station will be departing shortly.",
-                "If you are taking the 1:00 PM bus,",
-                "please gather at the gate outside the venue."
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "part4",
-      "title": "PART 4　太鼓演奏「響」　12:45 —",
-      "scheduledTime": "12:45",
-      "rows": [
-        {
-          "time": "12:45",
-          "action": "保呂田氏\nステージへ\n照明・音響\nスタンバイ確認\n★ 13:00前に\nスタートすること",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "続きまして、特別なパフォーマンスをご覧いただきます。",
-                "太鼓演奏グループ「響（ひびき）」の皆さんです。どうぞ！"
-              ]
-            },
-            {
-              "speaker": "保呂田",
-              "type": "note",
-              "lines": [
-                "We have a very special performance for you.",
-                "Please welcome the taiko drum group — \"Hibiki\"!"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "12:45\n〜\n13:05",
-          "action": "≪ 響 太鼓 演奏 ≫\n約20分\nMC フロアへ",
-          "script": [
-            {
-              "speaker": "≪ 響 太鼓 演奏 ≫",
-              "type": "note",
-              "lines": [
-                "約20分",
-                "演奏終了後 → MCがステージに戻りお礼アナウンス"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "13:05",
-          "action": "演奏終了\n大きな拍手",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "響（ひびき）の皆さん、素晴らしい演奏をありがとうございました！"
-              ]
-            },
-            {
-              "speaker": "保呂田",
-              "type": "note",
-              "lines": [
-                "Hibiki — thank you for that incredible performance!",
-                "One more round of applause, everyone!"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "part5",
-      "title": "PART 5　表彰式　13:05 —",
-      "scheduledTime": "13:05",
+      "title": "PART 4　表彰式　13:20 —",
+      "scheduledTime": "13:20",
       "rows": [
         {
           "time": "13:05",
@@ -564,9 +541,9 @@
       ]
     },
     {
-      "id": "part6",
-      "title": "PART 6　来賓ご挨拶（1）　13:20 —",
-      "scheduledTime": "13:20",
+      "id": "part5",
+      "title": "PART 5　来賓ご挨拶（1）　13:35 —",
+      "scheduledTime": "13:35",
       "rows": [
         {
           "time": "13:20",
@@ -626,9 +603,9 @@
       ]
     },
     {
-      "id": "part7",
-      "title": "PART 7　来賓ご挨拶（2）　13:25 —",
-      "scheduledTime": "13:25",
+      "id": "part6",
+      "title": "PART 6　来賓ご挨拶（2）　13:40 —",
+      "scheduledTime": "13:40",
       "rows": [
         {
           "time": "13:25",
@@ -687,9 +664,9 @@
       ]
     },
     {
-      "id": "part8",
-      "title": "PART 8　来賓ご挨拶（3）　13:30 —",
-      "scheduledTime": "13:30",
+      "id": "part7",
+      "title": "PART 7　来賓ご挨拶（3）　13:45 —",
+      "scheduledTime": "13:45",
       "rows": [
         {
           "time": "13:30",
@@ -748,9 +725,9 @@
       ]
     },
     {
-      "id": "part9",
-      "title": "PART 9　出展事業者ご紹介　13:35 —",
-      "scheduledTime": "13:35",
+      "id": "part8",
+      "title": "PART 8　出展事業者ご紹介　13:50 —",
+      "scheduledTime": "13:50",
       "rows": [
         {
           "time": "13:35",
@@ -799,9 +776,9 @@
       ]
     },
     {
-      "id": "part10",
-      "title": "PART 10　シャトルバス案内（14:00便）　13:38 —",
-      "scheduledTime": "13:38",
+      "id": "part9",
+      "title": "PART 9　シャトルバス案内（14:00便）　13:53 —",
+      "scheduledTime": "13:53",
       "rows": [
         {
           "time": "13:38",
@@ -829,9 +806,9 @@
       ]
     },
     {
-      "id": "part11",
-      "title": "PART 11　ビンゴゲーム　13:40 —",
-      "scheduledTime": "13:40",
+      "id": "part10",
+      "title": "PART 10　ビンゴゲーム　13:55 —",
+      "scheduledTime": "13:55",
       "rows": [
         {
           "time": "13:40",
@@ -894,8 +871,8 @@
       ]
     },
     {
-      "id": "part12",
-      "title": "PART 12　シャトルバス案内（15:00便・最終）　14:15 —",
+      "id": "part11",
+      "title": "PART 11　シャトルバス案内（15:00便・最終）　14:15 —",
       "scheduledTime": "14:15",
       "rows": [
         {
@@ -924,8 +901,8 @@
       ]
     },
     {
-      "id": "part13",
-      "title": "PART 13　閉会　14:30 —",
+      "id": "part12",
+      "title": "PART 12　閉会　14:30 —",
       "scheduledTime": "14:30",
       "rows": [
         {
