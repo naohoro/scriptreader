@@ -541,6 +541,47 @@
               ]
             }
           ]
+        },
+        {
+          "time": "19:00\n〜\n19:20\n\n【特別展示\n紹介】",
+          "action": "特別展示ブース\n紹介アナウンス\n（巡回中に適宜）\n①白鶴酒造\n②いわさき\nフードサンプル",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "This evening, we also have some very special exhibitions for you.",
+                "First — Hakutsuru Sake Brewery.",
+                "Founded in 1743 in Mikage-go, Nada, Hyogo,",
+                "Hakutsuru is one of Japan's most iconic and historic sake breweries —",
+                "with nearly 280 years of tradition behind every bottle.",
+                "Tonight, they have prepared a special Kobe Beef pairing sake called \"NIKU.\"",
+                "Please make sure to try it alongside the beef — the pairing is truly exceptional.",
+                "And our second special exhibitor is Iwasaki —",
+                "Japan's premier food sample company.",
+                "What they create is remarkable: hyper-realistic food replicas",
+                "that capture every detail — including the beautiful marbling of Wagyu.",
+                "Tonight, they have a special Kobe Beef food sample on display.",
+                "Please do stop by their booth — it's something you have to see to believe."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "本日は、複数の会社による特別な展示がされています。",
+                "白鶴酒造は1743年（寛保3年）に兵庫・灘の御影郷で創業した、",
+                "約280年の歴史を持つ日本を代表する老舗酒造メーカーです。",
+                "今回は、神戸ビーフの特別ペアリング「NIKU」をご提供いただいています。",
+                "ぜひお肉とともにお楽しみください。",
+                "さらに本日は、食品サンプルの会社「いわさき」も特別展示をしていただいております。",
+                "和牛の美しいマーブリングを見事に表現しているフードサンプルは、",
+                "いわさきだからこそできる技術です。",
+                "神戸ビーフの特別な食品サンプルもありますので、",
+                "ぜひブースに立ち寄ってご覧ください。"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -551,77 +592,222 @@
       "rows": [
         {
           "time": "19:15",
-          "action": "予告アナウンス\nよさこいチーム\nスタンバイ確認\n（舞台袖）\nBGMキュー準備",
+          "action": "予告アナウンス\n両チーム\nスタンバイ確認\n（舞台袖）\nBGMキュー準備",
           "script": [
             {
               "speaker": "Justin",
               "type": "mc1",
               "lines": [
-                "Please make your way toward the stage.",
-                "A special performance is about to begin."
+                "Ladies and gentlemen, please begin making your way toward the stage.",
+                "We have something very special coming up for you.",
+                "In just a moment, you're going to experience Yosakoi —",
+                "a uniquely Japanese dance tradition born in the 1950s.",
+                "Yosakoi fuses the energy of modern music",
+                "with the spirit of traditional Japanese performance.",
+                "Dancers carry small wooden clappers called naruko,",
+                "and each team creates its own choreography, costumes, and style.",
+                "No two teams are alike — and tonight,",
+                "we have two incredible teams from right here in Himeji.",
+                "Get ready — this is going to be a lot of fun."
               ]
             },
             {
               "speaker": "Marika",
               "type": "mc2",
               "lines": [
-                "You won't want to miss this."
+                "みなさん、ステージ前にお集まりください。",
+                "これから、特別なパフォーマンスが始まります。",
+                "よさこいは、1950年代に生まれた日本独自のダンスです。",
+                "鳴子（なるこ）という小さな木製の楽器を手に持ち、",
+                "現代音楽と伝統的な日本のリズムを融合させたダイナミックな演舞です。",
+                "チームごとに振付・衣装・音楽がすべて異なるのが特徴です。",
+                "今夜は、ここ姫路を拠点とする2チームが登場します。",
+                "どうぞお楽しみください！"
               ]
             }
           ]
         },
         {
           "time": "19:20",
-          "action": "よさこい開始\n照明演出\nMCは舞台袖へ",
+          "action": "【チーム①キュー】\nはちきんらん\n入場開始\n照明キュー\nMCはステージ前",
           "script": [
             {
               "speaker": "Justin",
               "type": "mc1",
               "lines": [
-                "Please welcome our Yosakoi performers —",
-                "enjoy the energy and passion of Japan!"
+                "Our first team — please welcome,",
+                "Hachikin-ran!"
               ]
             },
             {
               "speaker": "Marika",
               "type": "mc2",
               "lines": [
-                "Please welcome — Hachikin-ran, and Kiryu!"
+                "最初のチームです。どうぞ、",
+                "八琴栾（はちきんらん）！"
               ]
             }
           ]
         },
         {
-          "time": "19:20\n〜\n19:35",
-          "action": "よさこい演舞\n（約15分）\nMC舞台袖待機",
+          "time": "19:20\n（入場中）",
+          "action": "チーム①入場中\n★ 入場しながら\n紹介を読む",
           "script": [
             {
-              "speaker": "≪ よさこい演舞 ≫",
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Hachikin-ran is a Yosakoi dance team",
+                "based right here in Himeji.",
+                "Tonight, they're here to bring you",
+                "the very best of Yosakoi dance.",
+                "Please give them a big, warm welcome!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "八琴栾（はちきんらん）は、姫路を拠点とするよさこいチームです。",
+                "今夜は、最高のよさこいをお届けしてくれます。",
+                "温かい拍手でお迎えください！"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "19:20\n〜",
+          "action": "チーム①演舞\nMCは舞台袖へ",
+          "script": [
+            {
+              "speaker": "≪ はちきんらん 演舞 ≫",
               "type": "note",
               "lines": [
-                "約15分",
-                "終了後 → MCが戻ってお礼アナウンス"
+                "チーム①演舞中 — MCは舞台袖で待機"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "〜",
+          "action": "【チーム交代キュー】\nチーム①退場\nチーム②（きりゅう）\n入場開始",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Incredible! Let's keep that energy going.",
+                "Please welcome our second team —",
+                "Kiryu!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "続いて、2チーム目です。",
+                "姫龍z（きりゅう）！"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "（入場中）",
+          "action": "チーム②入場中\n★ 入場しながら\n紹介を読む",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Kiryu is another amazing Yosakoi team",
+                "from Himeji.",
+                "They want everyone to join in the fun —",
+                "so when the music starts,",
+                "clap along and feel the rhythm!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "姫龍z（きりゅう）も姫路を拠点とするよさこいチームです。",
+                "演舞が始まったら、ぜひリズムに合わせて手拍子をどうぞ！"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "〜",
+          "action": "チーム②演舞\nMCは舞台袖へ\nチーム②は\nステージに残る\nチーム①も再入場",
+          "script": [
+            {
+              "speaker": "≪ きりゅう 演舞 ≫",
+              "type": "note",
+              "lines": [
+                "チーム②演舞中 — MCは舞台袖で待機",
+                "演舞後：チーム②ステージ残留、チーム①が再入場"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "〜",
+          "action": "【再入場キュー】\nチーム①\nステージへ再入場\n★ 再入場中に読む\nその後：\nよさこい実行委員長\nまたは煽り手へキュー",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "And now — both teams are on stage.",
+                "Here's where things get really exciting.",
+                "It's time for all of us to join in!",
+                "Don't worry — there are no wrong moves in Yosakoi.",
+                "Just follow along, clap your hands,",
+                "and enjoy every moment.",
+                "Let's dance together!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "2チームがステージに揃いました！",
+                "ここからは、みなさんも一緒に踊りましょう！",
+                "よさこいに「正解」はありません。",
+                "手拍子でも、体を動かすだけでも大歓迎です。",
+                "さあ、一緒に楽しみましょう！"
+              ]
+            },
+            {
+              "speaker": "≪ キュー ≫",
+              "type": "note",
+              "lines": [
+                "→ よさこい実行委員長または煽り手にキューを出す",
+                "★ 時間に余裕がある場合、同じ曲を再演する場合あり — チームの動きに従う"
               ]
             }
           ]
         },
         {
           "time": "19:35",
-          "action": "演舞終了\n盛大な拍手",
+          "action": "演舞終了\n盛大な拍手\n両チーム礼",
           "script": [
             {
               "speaker": "Justin",
               "type": "mc1",
               "lines": [
-                "Wasn't that something!",
-                "One more round of applause, please!"
+                "Wasn't that absolutely amazing!",
+                "Hachikin-ran — Kiryu —",
+                "thank you so much for that incredible performance.",
+                "One more huge round of applause, everyone!"
               ]
             },
             {
               "speaker": "Marika",
               "type": "mc2",
               "lines": [
-                "Hachikin-ran, Kiryu — thank you so much!"
+                "八琴栾（はちきんらん）のみなさん、姫龍z（きりゅう）のみなさん、",
+                "ありがとうございました！もう一度、大きな拍手をお願いします！"
               ]
             }
           ]

@@ -24,35 +24,38 @@
       "rows": [
         {
           "time": "12:30",
-          "action": "BGM開始\nMC ステージへ\n照明：会場全体\n★ 雨天の場合\n傘置き場の\n案内を追加",
+          "action": "BGM開始\nMC ステージへ\n照明：会場全体",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
                 "ご案内申し上げます。",
-                "ただいまより「Japanese Wagyu World Auction 花見の宴」を開会いたします。",
-                "（▶ 晴天の場合：「日本の四季の中でもっとも美しいこの時期に、桜も咲き始めております。満開の桜の下、存分にお楽しみください。」）",
-                "（▶ 雨天の場合：「あいにくの雨模様となりましたが、このような中お越しいただきました皆様に、心より感謝申し上げます。屋外開催は変わらず予定通り進めてまいります。お足元にはどうぞお気をつけください。」）",
-                "本日は皆さま、美味しいお肉やお食事、そして会話をお楽しみください。",
+                "ただいまより「ジャパニーズ・和牛・ワールド・オークション　花見の宴」を開会いたします。",
+                "日本の四季の中でもっとも美しいこの時期に、桜も咲き始めております。",
+                "本日は、あいにくの雨模様となってしまいましたが、皆様の元気な笑顔で、この雨を吹き飛ばしましょう。",
+                "そして、どうぞごゆっくりと、美味しいお肉やお食事、景色、そして会話をお楽しみください。",
                 "のちほど、太鼓演奏、そして万国共通のビンゴゲームもご用意しております。",
                 "終了は14時30分を予定しております。",
                 "また、姫路駅への送迎シャトルバスをご用意しております。",
-                "出発時刻は　①13時00分　②14時00分　③15時00分　の3便です。",
+                "出発時刻は　①13時　②14時　③15時　の3便です。",
                 "会場前の道路に停車いたします。どうぞご利用ください。"
               ]
             },
             {
-              "speaker": "中川",
-              "type": "mc1",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
                 "Good afternoon, everyone.",
                 "We are pleased to open the",
-                "\"Japanese Wagyu World Auction Cherry Blossom Viewing Party.\"",
-                "(▶ Fine weather: \"This is the most beautiful time of year in Japan, and the cherry blossoms are in full bloom around us.\")",
-                "(▶ Rainy weather: \"Despite the rain today, we are truly grateful that you have all joined us here. The event will continue outdoors as planned — please watch your step.\")",
-                "Please enjoy the food and the great company.",
-                "We have a taiko drum performance and a bingo game planned for later.",
+                "\"Japanese Wagyu World Auction — Cherry Blossom Viewing Party.\"",
+                "This is the most beautiful time of year in Japan,",
+                "and the cherry blossoms are beginning to bloom around us.",
+                "Unfortunately, it's raining today,",
+                "but let's blow off the rain with all of your big smiles.",
+                "Please enjoy the food, the scenery, and the great company.",
+                "We have a Japanese taiko drum performance",
+                "and a bingo game for later.",
                 "The party is scheduled to end at 2:30 PM.",
                 "Shuttle buses to JR Himeji Station are available at:",
                 "① 1:00 PM　② 2:00 PM　③ 3:00 PM",
@@ -65,48 +68,49 @@
     },
     {
       "id": "part2",
-      "title": "PART 2　乾杯　12:35 —",
+      "title": "PART 2　ご挨拶 ＋ 乾杯　12:35 —",
       "scheduledTime": "12:35",
       "rows": [
         {
           "time": "12:35",
-          "action": "グラス配布確認\n西村議員　前列へ",
+          "action": "西村議員\nスタンバイ確認\n（花見乾杯ご挨拶）",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
                 "それではここで、ご挨拶と乾杯のご発声をいただきます。",
-                "衆議院議員、西村康稔様、どうぞよろしくお願いいたします。"
+                "衆議院議員、西村 康稔（にしむら やすとし）様、どうぞよろしくお願いいたします。"
               ]
             },
             {
-              "speaker": "中川",
-              "type": "mc1",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
                 "We would like to invite a Member of the House of Representatives,",
-                "Mr. Yasutoshi Nishimura, to give a few words and lead us in a toast.",
+                "Mr. Yasutoshi Nishimura,",
+                "to give a few words and lead us in a toast.",
                 "Mr. Nishimura — please."
               ]
             }
           ]
         },
         {
-          "time": "12:35\n〜\n12:38",
-          "action": "【西村康稔 衆議院議員】\nご挨拶 + 乾杯のご発声（英語）",
+          "time": "",
+          "action": "【西村議員\nご挨拶 ＋ 乾杯】",
           "script": [
             {
-              "speaker": "西村議員　ご挨拶 + 乾杯",
+              "speaker": "≪ 乾杯 ≫",
               "type": "note",
               "lines": [
-                "≪ スピーチ内容は別途確認　英語でのご発声 ≫"
+                "西村議員 ご挨拶 ＋ 乾杯のご発声"
               ]
             }
           ]
         },
         {
-          "time": "12:38",
-          "action": "全員で乾杯\n西村議員　着席",
+          "time": "",
+          "action": "ご挨拶終了\n拍手",
           "script": [
             {
               "speaker": "中川",
@@ -116,8 +120,8 @@
               ]
             },
             {
-              "speaker": "中川",
-              "type": "mc1",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
                 "Thank you so much, Mr. Nishimura."
               ]
@@ -128,114 +132,29 @@
     },
     {
       "id": "part3",
-      "title": "PART 3　来賓ご挨拶　12:40 —",
+      "title": "PART 3　シャトルバス案内（13:00便）　12:40 —",
       "scheduledTime": "12:40",
       "rows": [
         {
           "time": "12:40",
-          "action": "山田議員　前列へ",
+          "action": "バス出発前案内\n（13時便）",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "ここで、本日ご来賓の方よりご挨拶をいただきます。",
-                "衆議院議員、山田基靖様（やまだもとやす）、どうぞよろしくお願いいたします。"
+                "それではここで、シャトルバスのご案内をいたします。",
+                "JR姫路駅行きのシャトルバスがまもなく出発いたします。",
+                "13時出発のバスをご利用の方は、会場前の道路にお集まりください。"
               ]
             },
             {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "We are honored to welcome a Member of the House of Representatives,",
-                "Mr. Motoyasu Yamada — please."
-              ]
-            }
-          ]
-        },
-        {
-          "time": "12:40\n〜\n12:43",
-          "action": "【山田基靖 衆議院議員】\nご挨拶（約3分）",
-          "script": [
-            {
-              "speaker": "山田議員　ご挨拶",
+              "speaker": "保呂田",
               "type": "note",
               "lines": [
-                "≪ スピーチ内容は別途確認 ≫"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "12:43",
-          "action": "山田議員　着席",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "山田様、ありがとうございました。"
-              ]
-            },
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "Thank you very much, Mr. Yamada."
-              ]
-            }
-          ]
-        },
-        {
-          "time": "12:44",
-          "action": "池畑議員　前列へ",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "続きまして、衆議院議員、池畑浩太郎様（いけはたこうたろう）、どうぞよろしくお願いいたします。"
-              ]
-            },
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "Next, please welcome a Member of the House of Representatives,",
-                "Mr. Kotaro Ikehata — please."
-              ]
-            }
-          ]
-        },
-        {
-          "time": "12:44\n〜\n12:48",
-          "action": "【池畑浩太郎 衆議院議員】\nご挨拶（約3〜4分）",
-          "script": [
-            {
-              "speaker": "池畑議員　ご挨拶",
-              "type": "note",
-              "lines": [
-                "≪ スピーチ内容は別途確認 ≫"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "12:48",
-          "action": "池畑議員　着席",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "池畑様、ありがとうございました。"
-              ]
-            },
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "Thank you very much, Mr. Ikehata."
+                "The shuttle bus to JR Himeji Station will be departing shortly.",
+                "If you are taking the 1:00 PM bus,",
+                "please gather at the gate outside the venue."
               ]
             }
           ]
@@ -244,34 +163,98 @@
     },
     {
       "id": "part4",
-      "title": "PART 4　表彰セレモニー　12:45 —",
+      "title": "PART 4　太鼓演奏「響」　12:45 —",
       "scheduledTime": "12:45",
       "rows": [
         {
           "time": "12:45",
-          "action": "村上委員長・Marika\nステージへ\n表彰状・記念品\n準備確認",
+          "action": "保呂田氏\nステージへ\n照明・音響\nスタンバイ確認\n★ 13:00前に\nスタートすること",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "それでは、本日の表彰式を行います。",
-                "ステージに、村上実行委員長と着物ブッチャー マリカが登壇いたします。"
+                "続きまして、特別なパフォーマンスをご覧いただきます。",
+                "太鼓演奏グループ「響（ひびき）」の皆さんです。どうぞ！"
               ]
             },
             {
-              "speaker": "Horota",
-              "type": "mc2",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
-                "We will now hold the awards ceremony for the auction.",
-                "Please welcome to the stage Chairman Murakami and Kimono Butcher Marika."
+                "We have a very special performance for you.",
+                "Please welcome the taiko drum group — \"Hibiki\"!"
               ]
             }
           ]
         },
         {
-          "time": "—",
-          "action": "表彰：村上真之助賞\n（★ TBD：受賞者確認中）\n記念撮影",
+          "time": "12:45\n〜\n13:05",
+          "action": "≪ 響 太鼓 演奏 ≫\n約20分\nMC フロアへ",
+          "script": [
+            {
+              "speaker": "≪ 響 太鼓 演奏 ≫",
+              "type": "note",
+              "lines": [
+                "約20分",
+                "演奏終了後 → MCがステージに戻りお礼アナウンス"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "13:05",
+          "action": "演奏終了\n大きな拍手",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "響（ひびき）の皆さん、素晴らしい演奏をありがとうございました！"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "Hibiki — thank you for that incredible performance!",
+                "One more round of applause, everyone!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part5",
+      "title": "PART 5　表彰式　13:05 —",
+      "scheduledTime": "13:05",
+      "rows": [
+        {
+          "time": "13:05",
+          "action": "村上委員長\nMarika\nステージへ",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "それでは、ただいまより本日の表彰式を行います。",
+                "ステージに、村上実行委員長と着物ブッチャー　マリカが登壇いたします。"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "We will now hold the awards ceremony for the auction.",
+                "Please welcome to the stage — Chairman Murakami and Kimono Butcher Marika."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "【村上真之助賞\n発表】",
           "script": [
             {
               "speaker": "",
@@ -291,23 +274,50 @@
               "speaker": "",
               "type": "note",
               "lines": [
-                "Japanese Wagyu World Auction 2026「村上真之助賞」の受賞者は、（★ TBD）様です。おめでとうございます！"
+                "ジャパニーズ・和牛・ワールド・オークション 2026「村上真之助賞」の受賞者は"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "★ TBD  【Horota】"
+                "（★　　　　　　　）様です。おめでとうございます！"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "The Murakami Shinnosuke Award goes to （★ TBD）. Congratulations!"
+                "★ TBD  【保呂田】"
               ]
             },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "The Murakami Shinnosuke Award goes to"
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "（★ TBD）."
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "Congratulations!"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "受賞者\nお礼アナウンス",
+          "script": [
             {
               "speaker": "",
               "type": "note",
@@ -319,14 +329,14 @@
               "speaker": "",
               "type": "note",
               "lines": [
-                "（★ TBD）様、ありがとうございました。"
+                "（★　　　　　　　）様、ありがとうございました。"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "★ TBD  【Horota】"
+                "★ TBD  【保呂田】"
               ]
             },
             {
@@ -339,8 +349,8 @@
           ]
         },
         {
-          "time": "—",
-          "action": "表彰：神戸ビーフ金賞\n（★ TBD：受賞者確認中）\n記念撮影",
+          "time": "",
+          "action": "【神戸ビーフ金賞\n発表】",
           "script": [
             {
               "speaker": "",
@@ -360,23 +370,50 @@
               "speaker": "",
               "type": "note",
               "lines": [
-                "Japanese Wagyu World Auction 2026「神戸ビーフ金賞」の受賞者は、（★ TBD）様です。おめでとうございます！"
+                "ジャパニーズ・和牛・ワールド・オークション 2026「神戸ビーフ金賞」の受賞者は"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "★ TBD  【Horota】"
+                "（★　　　　　　　）様です。おめでとうございます！"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "The Kobe Beef Gold Award goes to （★ TBD）. Congratulations!"
+                "★ TBD  【保呂田】"
               ]
             },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "The Kobe Beef Gold Award goes to"
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "（★ TBD）."
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "Congratulations!"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "受賞者\nお礼アナウンス",
+          "script": [
             {
               "speaker": "",
               "type": "note",
@@ -388,14 +425,14 @@
               "speaker": "",
               "type": "note",
               "lines": [
-                "（★ TBD）様、ありがとうございました。"
+                "（★　　　　　　　）様、ありがとうございました。"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "★ TBD  【Horota】"
+                "★ TBD  【保呂田】"
               ]
             },
             {
@@ -408,8 +445,8 @@
           ]
         },
         {
-          "time": "—",
-          "action": "表彰：最多購買者賞\n（★ TBD：受賞者確認中）\n記念撮影",
+          "time": "",
+          "action": "【最多購買者賞\n発表】",
           "script": [
             {
               "speaker": "",
@@ -429,23 +466,50 @@
               "speaker": "",
               "type": "note",
               "lines": [
-                "Japanese Wagyu World Auction 2026「最多購買者賞」の受賞者は、（★ TBD）様です。おめでとうございます！"
+                "ジャパニーズ・和牛・ワールド・オークション 2026「最多購買者賞」の受賞者は"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "★ TBD  【Horota】"
+                "（★　　　　　　　）様です。おめでとうございます！"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "The Top Buyer Award goes to （★ TBD）. Congratulations!"
+                "★ TBD  【保呂田】"
               ]
             },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "The Top Buyer Award goes to"
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "（★ TBD）."
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "Congratulations!"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "受賞者\nお礼アナウンス",
+          "script": [
             {
               "speaker": "",
               "type": "note",
@@ -457,14 +521,21 @@
               "speaker": "",
               "type": "note",
               "lines": [
-                "（★ TBD）様、ありがとうございました。"
+                "（★　　　　　　　）様、ありがとうございました。"
               ]
             },
             {
               "speaker": "",
               "type": "note",
               "lines": [
-                "★ TBD  【Horota】"
+                "受賞者の皆様、おめでとうございます。村上委員長、マリカ、ありがとうございました。"
+              ]
+            },
+            {
+              "speaker": "",
+              "type": "note",
+              "lines": [
+                "★ TBD  【保呂田】"
               ]
             },
             {
@@ -473,68 +544,19 @@
               "lines": [
                 "Thank you so much, （★ TBD）!"
               ]
-            }
-          ]
-        },
-        {
-          "time": "12:54",
-          "action": "登壇者　降壇",
-          "script": [
+            },
             {
-              "speaker": "中川",
-              "type": "mc1",
+              "speaker": "",
+              "type": "note",
               "lines": [
-                "受賞者の皆さま、おめでとうございました。村上委員長、マリカ、ありがとうございました。"
+                "Congratulations to all award recipients."
               ]
             },
             {
-              "speaker": "Horota",
-              "type": "mc2",
+              "speaker": "",
+              "type": "note",
               "lines": [
-                "Congratulations to all award recipients. Thank you, Chairman Murakami and Marika."
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "part5",
-      "title": "PART 5　井寄牧場紹介　12:55 —",
-      "scheduledTime": "12:55",
-      "rows": [
-        {
-          "time": "12:55",
-          "action": "井寄 智之 氏　確認\n会場内に但馬牛2頭\n写真撮影エリア確認\n※触れない・驚かせない旨\nを必ず案内",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "すでにお気づきの方も多いかと思いますが、",
-                "今年も昨年に続き、会場には立派な但馬牛が2頭、華を添えてくれています。",
-                "間近で但馬牛をご覧いただける、またとない機会ですので、",
-                "ぜひ記念撮影をお楽しみください。",
-                "なお、牛を驚かせたり、触れたりなさいませんよう、",
-                "ご協力をお願い申し上げます。",
-                "これらの但馬牛は、井寄牧場より、",
-                "井寄 智之（いより ともゆき）様にお連れいただきました。",
-                "井寄様、ありがとうございます。"
-              ]
-            },
-            {
-              "speaker": "Horota",
-              "type": "mc2",
-              "lines": [
-                "As many of you may have noticed,",
-                "we are honored to have two magnificent Tajima cattle here at the venue —",
-                "just as we did last year.",
-                "This is a rare opportunity to see Tajima-ushi up close.",
-                "Please feel free to take commemorative photos.",
-                "We do ask that you refrain from touching or startling the cattle.",
-                "Thank you for your cooperation.",
-                "These animals were brought here by Mr. Tomoyuki Iyori of Iyori Farm.",
-                "Mr. Iyori — thank you very much."
+                "Thank you, Chairman Murakami and Marika."
               ]
             }
           ]
@@ -543,62 +565,60 @@
     },
     {
       "id": "part6",
-      "title": "PART 6　響 太鼓　12:57 —　★ 13:00前スタート必須",
-      "scheduledTime": "12:57",
+      "title": "PART 6　来賓ご挨拶（1）　13:20 —",
+      "scheduledTime": "13:20",
       "rows": [
         {
-          "time": "12:57",
-          "action": "響 太鼓チーム\nスタンバイ確認\n照明・音響確認\nMCは舞台袖へ\n★ 13:00前スタート\n必須",
+          "time": "13:20",
+          "action": "山田議員\nスタンバイ確認",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "続きまして、特別なパフォーマンスをご覧いただきます。",
-                "太鼓演奏グループ「響」の皆さんです。どうぞ！"
+                "ここで、本日ご来賓の方々よりご挨拶をいただきます。",
+                "衆議院議員、山田 基靖（やまだ もとやす）様、どうぞよろしくお願いいたします。"
               ]
             },
             {
-              "speaker": "Horota",
-              "type": "mc2",
-              "lines": [
-                "We have a very special performance for you.",
-                "Please welcome the taiko drum group \"Hibiki\"!"
-              ]
-            }
-          ]
-        },
-        {
-          "time": "12:58\n〜\n13:18",
-          "action": "響 太鼓 演奏\n（約20分）\nMC 舞台袖待機\n★ 演奏は13:00前に\nスタートすること",
-          "script": [
-            {
-              "speaker": "≪ 響 太鼓 演奏 ≫",
+              "speaker": "保呂田",
               "type": "note",
               "lines": [
-                "約20分　（12:58スタート → 13:18終了目安）",
-                "終了後 → MCが戻ってお礼アナウンス"
+                "We are honored to welcome a Member of the House of Representatives,",
+                "Mr. Motoyasu Yamada — please."
               ]
             }
           ]
         },
         {
-          "time": "13:18",
-          "action": "演奏終了\n盛大な拍手",
+          "time": "",
+          "action": "【山田議員\nご挨拶】",
+          "script": [
+            {
+              "speaker": "≪ 山田議員 ご挨拶 ≫",
+              "type": "note",
+              "lines": [
+                "ご挨拶終了後 → お礼アナウンス"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "拍手",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "響の皆さん、素晴らしい演奏をありがとうございました！"
+                "山田様、ありがとうございました。"
               ]
             },
             {
-              "speaker": "Horota",
-              "type": "mc2",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
-                "Hibiki — thank you for that incredible performance!",
-                "One more round of applause, everyone!"
+                "Thank you very much, Mr. Yamada."
               ]
             }
           ]
@@ -607,62 +627,59 @@
     },
     {
       "id": "part7",
-      "title": "PART 7　出店事業者 ご紹介 ／ 会食・歓談　13:20 —",
-      "scheduledTime": "13:20",
+      "title": "PART 7　来賓ご挨拶（2）　13:25 —",
+      "scheduledTime": "13:25",
       "rows": [
         {
-          "time": "13:20",
-          "action": "各ブース\nスタンバイ確認",
+          "time": "13:25",
+          "action": "池畑議員\nスタンバイ確認",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "皆さま、本日美味しいお食事を提供していただいております",
-                "出店事業者の皆様をご紹介いたします。",
-                "・神戸ビーフ焼肉　　　（神戸肉流通推進協議会）",
-                "・すき焼き丼　　　　　（浅草今半）",
-                "・神戸ビーフコロッケ　（浦井商店）",
-                "・串焼き　　　　　　　（串の屋）",
-                "・焼き豚　　　　　　　（新生公司）",
-                "・揖保乃糸 にゅうめん　（関西食品株式会社）",
-                "・フルーツ　　　　　　（全農兵庫園芸部）",
-                "・ソフトクリーム　　　（全農兵庫畜産部）",
-                "・お酒・ビール・ワイン（田中商店）",
-                "・日本酒「武久」　　　（白鶴酒造）",
-                "ぜひ各ブースをご堪能ください！"
+                "続きまして、衆議院議員、池畑 浩太朗（いけはた こうたろう）様、どうぞよろしくお願いいたします。"
               ]
             },
             {
-              "speaker": "Horota",
-              "type": "mc2",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
-                "Allow me to introduce the food vendors",
-                "who have prepared today's wonderful offerings.",
-                "· Kobe Beef Yakiniku         (Kobe Beef Marketing & Distribution Assoc.)",
-                "· Sukiyaki Bowl              (Asakusa Imahan)",
-                "· Kobe Beef Croquettes       (Urai Shoten)",
-                "· Grilled Skewers            (Kushi no Ya)",
-                "· Roast Pork                 (Shinsei Koshi)",
-                "· Ibonoito Soup Noodles      (Asahi Foods Industry)",
-                "· Fresh Fruits               (ZEN-NOH Hyogo Horticultural Dept.)",
-                "· Soft Serve Ice Cream       (ZEN-NOH Hyogo Livestock Dept.)",
-                "· Sake, Beer & Wine          (Tanaka Shoten)",
-                "· Japanese Sake \"NIKU\"       (Hakutsuru Sake Brewing)",
-                "Please enjoy everything on offer!"
+                "Next, please welcome a Member of the House of Representatives,",
+                "Mr. Kotaro Ikehata — please."
               ]
             }
           ]
         },
         {
-          "time": "13:25\n〜\n13:40",
-          "action": "自由歓談・会食\n但馬牛写真撮影エリア開放\nMCはフロアを巡回\n（保呂田と同行）",
+          "time": "",
+          "action": "【池畑議員\nご挨拶】",
           "script": [
             {
-              "speaker": "（フリータイム）",
+              "speaker": "≪ 池畑議員 ご挨拶 ≫",
               "type": "note",
               "lines": [
-                "中川・Horota　フロアを巡回し、国際バイヤーと交流（保呂田と同行）"
+                "ご挨拶終了後 → お礼アナウンス"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "拍手",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "池畑様、ありがとうございました。"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "Thank you very much, Mr. Ikehata."
               ]
             }
           ]
@@ -671,27 +688,59 @@
     },
     {
       "id": "part8",
-      "title": "PART 8　シャトルバス案内①　12:50 —",
-      "scheduledTime": "12:50",
+      "title": "PART 8　来賓ご挨拶（3）　13:30 —",
+      "scheduledTime": "13:30",
       "rows": [
         {
-          "time": "12:50",
-          "action": "バス運転手へ\n出発準備確認",
+          "time": "13:30",
+          "action": "河野議員\nスタンバイ確認",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "JR姫路駅行きのシャトルバスがまもなく出発いたします。",
-                "13時00分発のバスをご利用の方は、会場前の道路にお集まりください。"
+                "続きまして、衆議院議員、河野 義博（かわの よしひろ）様、どうぞよろしくお願いいたします。"
               ]
             },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "Next, please welcome a Member of the House of Representatives,",
+                "Mr. Yoshihiro Kawano — please."
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "【河野議員\nご挨拶】",
+          "script": [
+            {
+              "speaker": "≪ 河野議員 ご挨拶 ≫",
+              "type": "note",
+              "lines": [
+                "ご挨拶終了後 → お礼アナウンス"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "",
+          "action": "拍手",
+          "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "The shuttle bus to JR Himeji Station will be departing shortly.",
-                "If you are taking the 1:00 PM bus, please gather at the gate outside the venue."
+                "河野様、ありがとうございました。"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "Thank you very much, Mr. Kawano."
               ]
             }
           ]
@@ -700,12 +749,93 @@
     },
     {
       "id": "part9",
-      "title": "PART 9　ビンゴゲーム　13:40 —",
+      "title": "PART 9　出展事業者ご紹介　13:35 —",
+      "scheduledTime": "13:35",
+      "rows": [
+        {
+          "time": "13:35",
+          "action": "各ブース確認\nスタッフ配置",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "それでは皆さま、ここで本日この美味しいお食事を提供していただいております、",
+                "出店事業者の皆様をご紹介いたします。",
+                "1. 神戸ビーフ焼肉　　　　　　　神戸肉流通推進協議会",
+                "2. すき焼き丼　　　　　　　　　浅草今半",
+                "3. 神戸ビーフコロッケ　　　　　浦井商店",
+                "4. 串焼き　　　　　　　　　　　串の屋",
+                "5. 焼き豚　　　　　　　　　　　新生公司",
+                "6. 揖保乃糸 にゅうめん　　　　　関西食品株式会社",
+                "7. フルーツ　　　　　　　　　　全農兵庫園芸部",
+                "8. ソフトクリーム　　　　　　　全農兵庫畜産部",
+                "9. お酒・ビール・ワイン　　　　田中商店",
+                "10. 日本酒「武久（にく）」　　　白鶴酒造",
+                "皆様、ぜひ各ブースをご堪能ください！"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "Allow me to introduce the food vendors",
+                "who have prepared today's wonderful offerings.",
+                "1. Kobe Beef Yakiniku — Kobe Beef Marketing & Distribution Assoc.",
+                "2. Sukiyaki Bowl — Asakusa Imahan",
+                "3. Kobe Beef Croquettes — Urai Shoten",
+                "4. Grilled Skewers — Kushi no Ya",
+                "5. Roast Pork — Shinsei Koshi",
+                "6. Ibonoito Soup Noodles — Kansai Foods Co., Ltd.",
+                "7. Fresh Fruits — ZEN-NOH Hyogo Horticultural Dept.",
+                "8. Soft Serve Ice Cream — ZEN-NOH Hyogo Livestock Dept.",
+                "9. Sake, Beer & Wine — Tanaka Shoten",
+                "10. Japanese Sake \"NIKU\" — Hakutsuru Sake Brewing",
+                "Please enjoy everything on offer!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part10",
+      "title": "PART 10　シャトルバス案内（14:00便）　13:38 —",
+      "scheduledTime": "13:38",
+      "rows": [
+        {
+          "time": "13:38",
+          "action": "バス出発前案内\n（14時便）",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "皆様、まもなくJR姫路駅行きのシャトルバスが出発いたします。",
+                "14時出発のバスをご利用の方は、会場前の道路にお集まりください。"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "The shuttle bus to JR Himeji Station will be departing shortly.",
+                "If you are taking the 2:00 PM bus,",
+                "please gather at the gate outside the venue."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part11",
+      "title": "PART 11　ビンゴゲーム　13:40 —",
       "scheduledTime": "13:40",
       "rows": [
         {
           "time": "13:40",
-          "action": "ビンゴカード準備確認\n景品20点確認\n斎藤氏　ステージスタンバイ",
+          "action": "斎藤氏\nスタンバイ確認\nビンゴカード\n配布済み確認",
           "script": [
             {
               "speaker": "中川",
@@ -716,8 +846,8 @@
               ]
             },
             {
-              "speaker": "Horota",
-              "type": "mc2",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
                 "Time for our bingo game!",
                 "All international buyers, please join in.",
@@ -728,36 +858,35 @@
         },
         {
           "time": "13:40\n〜\n14:15",
-          "action": "ビンゴゲーム進行\n（斎藤）\n景品20点配布\n終了後→参加賞\n中川・Horota\nフロアで参加",
+          "action": "【斎藤 ビンゴ進行】\n数字読み上げ含む\nビンゴ進行は\n全て斎藤氏担当\n中川・保呂田は\nフロアに入り\n参加者と一緒に\n盛り上げる\n景品20点終了後\n全員に参加賞配布",
           "script": [
             {
-              "speaker": "斎藤（ビンゴ進行）",
+              "speaker": "≪ ビンゴ進行 ≫",
               "type": "note",
               "lines": [
-                "≪ ビンゴスクリプト：斎藤氏 別途進行 ≫",
-                "数字読み上げを含むビンゴ進行は全て斎藤さんが担当",
-                "中川・Horota はフロアに入り参加者と一緒に盛り上げる",
-                "景品20点終了後、残り全員に参加賞を配布"
+                "斎藤氏によるビンゴ進行（スクリプト別途）"
               ]
             }
           ]
         },
         {
           "time": "14:15",
-          "action": "ビンゴ終了\nMCステージへ戻る",
+          "action": "景品・参加賞\n配布終了",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "斎藤さん、ありがとうございました！皆さま、楽しんでいただけましたでしょうか。"
+                "斎藤さん、ありがとうございました！皆さま、楽しんでいただけましたでしょうか。",
+                "それでは引き続き楽しい時間をお過ごしください。"
               ]
             },
             {
-              "speaker": "Horota",
-              "type": "mc2",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
-                "Thank you, Saito! Hope everyone had fun!"
+                "Thank you, Saito! Hope everyone had fun!",
+                "Please continue to enjoy your time."
               ]
             }
           ]
@@ -765,48 +894,53 @@
       ]
     },
     {
-      "id": "part10",
-      "title": "PART 10　シャトルバス案内② ／ 閉会　14:15 —",
+      "id": "part12",
+      "title": "PART 12　シャトルバス案内（15:00便・最終）　14:15 —",
       "scheduledTime": "14:15",
       "rows": [
         {
           "time": "14:15",
-          "action": "バス運転手へ\n出発準備確認\n（14:00便は\n随時受け付け）",
+          "action": "バス出発前案内\n（15時・最終便）",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
-                "JR姫路駅行きのシャトルバスのご案内です。",
-                "14時00分発のバスをご利用の方は、会場前の道路にお集まりください。"
+                "それでは、ここで、JR姫路駅行きのシャトルバスのご案内です。",
+                "15時発の最終バスをご利用の方は、会場前の道路にお集まりください。"
               ]
             },
             {
-              "speaker": "Horota",
-              "type": "mc2",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
-                "A shuttle bus to JR Himeji Station is now available.",
-                "If you are taking the 2:00 PM bus, please make your way to the gate outside the venue."
+                "A final shuttle bus to JR Himeji Station is now available.",
+                "If you are taking the 3:00 PM bus,",
+                "please make your way to the gate outside the venue."
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "part13",
+      "title": "PART 13　閉会　14:30 —",
+      "scheduledTime": "14:30",
+      "rows": [
         {
           "time": "14:30",
-          "action": "閉会\nスタッフ：撤収準備開始\n★ 15:00便（最終）\n案内を含める",
+          "action": "閉会アナウンス\n照明：会場全体\nシャトルバス\n（15時最終便）\n出発準備",
           "script": [
             {
               "speaker": "中川",
               "type": "mc1",
               "lines": [
                 "ご歓談中のところ、失礼いたします。",
-                "これをもちまして、「Japanese Wagyu World Auction 2026」の",
-                "全プログラムが終了いたしました。",
+                "これをもちまして、「Japanese Wagyu World Auction 2026」の全プログラムが終了いたしました。",
                 "皆様のご協力のおかげで、昨日からの全行程を無事に終えることができました。",
                 "誠にありがとうございました。",
-                "引き続き、日本の銘柄和牛・神戸ビーフを世界の消費者に届けられるよう、",
-                "バイヤーの皆様の引き続きのご協力をお願い申し上げます。",
-                "なお、JR姫路駅行きの最終シャトルバスは15時00分出発です。",
+                "なお、JR姫路駅行きの最終シャトルバスは15時出発です。",
                 "ご利用の方は会場前の道路にてお待ちください。",
                 "それでは皆様、どうぞお気をつけてお帰りください。",
                 "また来年、この場所でお会いできることを楽しみにしております。",
@@ -814,18 +948,19 @@
               ]
             },
             {
-              "speaker": "中川",
-              "type": "mc1",
+              "speaker": "保呂田",
+              "type": "note",
               "lines": [
-                "With that, I am pleased to announce the official close",
-                "of all programs at the Japanese Wagyu World Auction.",
-                "This event has been a great success, and we truly appreciate",
-                "the participation and cooperation of each and every one of you.",
-                "We ask for your continued support in bringing the exceptional quality",
-                "of Japanese Wagyu and Kobe Beef to consumers around the world.",
-                "Please note that the final shuttle bus to JR Himeji Station",
-                "departs at 3:00 PM from just outside the venue.",
-                "Please travel safely, and we look forward to welcoming you again next year.",
+                "I am pleased to announce the official close",
+                "of all programs at the Japanese Wagyu World Auction 2026.",
+                "This event has been a great success,",
+                "and we truly appreciate the participation",
+                "and cooperation of each and every one of you.",
+                "Please note that the final shuttle bus",
+                "to JR Himeji Station departs at 3:00 PM",
+                "from just outside the venue.",
+                "Please travel safely,",
+                "and we look forward to welcoming you again next year.",
                 "Thank you so much."
               ]
             }
