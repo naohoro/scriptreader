@@ -332,8 +332,32 @@
       "scheduledTime": "18:30",
       "rows": [
         {
+          "time": "18:28",
+          "action": "村上実行委員長\n舞台袖でスタンバイ\nベルト準備確認",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
+                "Before we move to the next part of this evening,",
+                "we would like to invite a very special guest to the stage.",
+                "Please welcome the Chairman of the Japanese Wagyu World Auction —",
+                "Mr. Shinnosuke Murakami!"
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "ジャパニーズ・和牛・ワールド・オークション実行委員長、",
+                "村上 真之助 様、どうぞ壇上へお越しください。"
+              ]
+            }
+          ]
+        },
+        {
           "time": "18:30",
-          "action": "前年度GCバイヤー\n壇上へ\nWYNN PALACE 泓\nMr. Hironori Maeda\nベルト準備確認",
+          "action": "前年度GCバイヤー\n壇上へ\nWYNN PALACE 泓\nMr. Hironori Maeda\n村上実行委員長\n壇上待機中",
           "script": [
             {
               "speaker": "Justin",
@@ -350,7 +374,7 @@
               "speaker": "Marika",
               "type": "mc2",
               "lines": [
-                "Mr. Maeda — please come to the stage."
+                "WYNN PALACE 泓、前田 裕紀（まえだ ひろのり）様、どうぞ！"
               ]
             }
           ]
@@ -366,18 +390,46 @@
                 "The belt is back — who will claim it tomorrow?",
                 "Mr. Maeda, thank you. Please give him a big hand!"
               ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "前田様、ありがとうございました！大きな拍手をお願いします！"
+              ]
             }
           ]
         },
         {
-          "time": "18:34",
-          "action": "スパークリングワイン\n全員のグラスへ\nウェイタースタンバイ\n乾杯発声者：\n前田 裕紀 様\n（まえだ ひろのり）\n（WYNN PALACE 泓）",
+          "time": "18:33",
+          "action": "【グラス準備】\nウェイター\n全員にスパークリング\nワインを配布開始",
           "script": [
             {
               "speaker": "Justin",
               "type": "mc1",
               "lines": [
-                "Please take your glass.",
+                "Ladies and gentlemen, we will now have a toast.",
+                "Please take a moment to prepare your glass."
+              ]
+            },
+            {
+              "speaker": "Marika",
+              "type": "mc2",
+              "lines": [
+                "これより乾杯に移ります。",
+                "お手元にグラスをご準備ください。"
+              ]
+            }
+          ]
+        },
+        {
+          "time": "18:34",
+          "action": "グラス配布完了\n全員グラスを持った\nことを確認\n乾杯発声者：\n前田 裕紀 様\n（まえだ ひろのり）\n（WYNN PALACE 泓）",
+          "script": [
+            {
+              "speaker": "Justin",
+              "type": "mc1",
+              "lines": [
                 "We are honored to invite Mr. Hironori Maeda of WYNN PALACE 泓",
                 "to lead us in a toast."
               ]
@@ -386,7 +438,8 @@
               "speaker": "Marika",
               "type": "mc2",
               "lines": [
-                "Please raise your glass."
+                "乾杯のご発声は、前田 裕紀 様にお願いいたします。",
+                "前田様、どうぞ。"
               ]
             }
           ]
@@ -896,17 +949,17 @@
               "lines": [
                 "Thank you, Mr. Yamaji.",
                 "Tomorrow is the main event — the Japanese Wagyu World Auction.",
-                "We look forward to seeing you all there.",
-                "Thank you to every one of you for an unforgettable evening.",
-                "Have a wonderful night!"
+                "Thank you to every one of you for a truly unforgettable evening.",
+                "See you tomorrow!"
               ]
             },
             {
               "speaker": "Marika",
               "type": "mc2",
               "lines": [
-                "Thank you, Mr. Yamaji.",
-                "We look forward to seeing you all tomorrow."
+                "ありがとうございました。",
+                "明日のオークション本番でお会いしましょう。",
+                "See you tomorrow!"
               ]
             }
           ]
