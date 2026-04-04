@@ -542,8 +542,59 @@
     },
     {
       "id": "part5",
-      "title": "PART 5　来賓ご挨拶（1）　13:35 —",
-      "scheduledTime": "13:35",
+      "title": "PART 5　出展事業者ご紹介　13:50 —",
+      "scheduledTime": "13:50",
+      "rows": [
+        {
+          "time": "13:35",
+          "action": "各ブース確認\nスタッフ配置",
+          "script": [
+            {
+              "speaker": "中川",
+              "type": "mc1",
+              "lines": [
+                "それでは皆さま、ここで本日この美味しいお食事を提供していただいております、",
+                "出店事業者の皆様をご紹介いたします。",
+                "1. 神戸ビーフ焼肉　　　　　　　神戸肉流通推進協議会",
+                "2. すき焼き丼　　　　　　　　　浅草今半",
+                "3. 神戸ビーフコロッケ　　　　　浦井商店",
+                "4. 串焼き　　　　　　　　　　　串の屋",
+                "5. 焼き豚　　　　　　　　　　　新生公司",
+                "6. 揖保乃糸 にゅうめん　　　　　関西食品工業株式会社",
+                "7. フルーツ　　　　　　　　　　全農兵庫園芸部",
+                "8. ソフトクリーム　　　　　　　全農兵庫畜産部",
+                "9. お酒・ビール・ワイン　　　　田中商店",
+                "10. 日本酒「武久（にく）」　　　白鶴酒造",
+                "それでは皆さま、どうぞ各ブースをご堪能ください！"
+              ]
+            },
+            {
+              "speaker": "保呂田",
+              "type": "note",
+              "lines": [
+                "Allow me to introduce the food vendors",
+                "who have prepared today's wonderful offerings.",
+                "1. Kobe Beef Yakiniku — Kobe Beef Marketing & Distribution Assoc.",
+                "2. Sukiyaki Bowl — Asakusa Imahan",
+                "3. Kobe Beef Croquettes — Urai Shoten",
+                "4. Grilled Skewers — Kushi no Ya",
+                "5. Roast Pork — Shinsei Koshi",
+                "6. Ibonoito Soup Noodles — Kansai Foods Co., Ltd.",
+                "7. Fresh Fruits — ZEN-NOH Hyogo Horticultural Dept.",
+                "8. Soft Serve Ice Cream — ZEN-NOH Hyogo Livestock Dept.",
+                "9. Sake, Beer & Wine — Tanaka Shoten",
+                "10. Japanese Sake \"NIKU\" — Hakutsuru Sake Brewing",
+                "Please enjoy everything on offer!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "part6",
+      "title": "PART 6　来賓ご挨拶（1）　（歓談の途中）—",
+      "scheduledTime": null,
       "rows": [
         {
           "time": "13:20",
@@ -553,6 +604,7 @@
               "speaker": "中川",
               "type": "mc1",
               "lines": [
+                "ご歓談中のところ失礼いたします。",
                 "ここで、本日ご来賓の方々よりご挨拶をいただきます。",
                 "衆議院議員、山田 基靖（やまだ もとやす）様、どうぞよろしくお願いいたします。"
               ]
@@ -561,6 +613,7 @@
               "speaker": "保呂田",
               "type": "note",
               "lines": [
+                "Excuse me for a moment.",
                 "We are honored to welcome a Member of the House of Representatives,",
                 "Mr. Motoyasu Yamada — please."
               ]
@@ -603,9 +656,9 @@
       ]
     },
     {
-      "id": "part6",
-      "title": "PART 6　来賓ご挨拶（2）　13:40 —",
-      "scheduledTime": "13:40",
+      "id": "part7",
+      "title": "PART 7　来賓ご挨拶（2）　—",
+      "scheduledTime": null,
       "rows": [
         {
           "time": "13:25",
@@ -664,9 +717,9 @@
       ]
     },
     {
-      "id": "part7",
-      "title": "PART 7　来賓ご挨拶（3）　13:45 —",
-      "scheduledTime": "13:45",
+      "id": "part8",
+      "title": "PART 8　来賓ご挨拶（3）　—",
+      "scheduledTime": null,
       "rows": [
         {
           "time": "13:30",
@@ -718,57 +771,6 @@
               "type": "note",
               "lines": [
                 "Thank you very much, Mr. Kawano."
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "part8",
-      "title": "PART 8　出展事業者ご紹介　13:50 —",
-      "scheduledTime": "13:50",
-      "rows": [
-        {
-          "time": "13:35",
-          "action": "各ブース確認\nスタッフ配置",
-          "script": [
-            {
-              "speaker": "中川",
-              "type": "mc1",
-              "lines": [
-                "それでは皆さま、ここで本日この美味しいお食事を提供していただいております、",
-                "出店事業者の皆様をご紹介いたします。",
-                "1. 神戸ビーフ焼肉　　　　　　　神戸肉流通推進協議会",
-                "2. すき焼き丼　　　　　　　　　浅草今半",
-                "3. 神戸ビーフコロッケ　　　　　浦井商店",
-                "4. 串焼き　　　　　　　　　　　串の屋",
-                "5. 焼き豚　　　　　　　　　　　新生公司",
-                "6. 揖保乃糸 にゅうめん　　　　　関西食品工業株式会社",
-                "7. フルーツ　　　　　　　　　　全農兵庫園芸部",
-                "8. ソフトクリーム　　　　　　　全農兵庫畜産部",
-                "9. お酒・ビール・ワイン　　　　田中商店",
-                "10. 日本酒「武久（にく）」　　　白鶴酒造",
-                "皆様、ぜひ各ブースをご堪能ください！"
-              ]
-            },
-            {
-              "speaker": "保呂田",
-              "type": "note",
-              "lines": [
-                "Allow me to introduce the food vendors",
-                "who have prepared today's wonderful offerings.",
-                "1. Kobe Beef Yakiniku — Kobe Beef Marketing & Distribution Assoc.",
-                "2. Sukiyaki Bowl — Asakusa Imahan",
-                "3. Kobe Beef Croquettes — Urai Shoten",
-                "4. Grilled Skewers — Kushi no Ya",
-                "5. Roast Pork — Shinsei Koshi",
-                "6. Ibonoito Soup Noodles — Kansai Foods Co., Ltd.",
-                "7. Fresh Fruits — ZEN-NOH Hyogo Horticultural Dept.",
-                "8. Soft Serve Ice Cream — ZEN-NOH Hyogo Livestock Dept.",
-                "9. Sake, Beer & Wine — Tanaka Shoten",
-                "10. Japanese Sake \"NIKU\" — Hakutsuru Sake Brewing",
-                "Please enjoy everything on offer!"
               ]
             }
           ]
