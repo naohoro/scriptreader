@@ -43,7 +43,23 @@
               "speaker": "日本語",
               "type": "mc1",
               "lines": [
-                "皆様、本日は「日本産食肉加工品商談会/交流会」へようこそお越しくださいました。イベントは３分後に開始いたしますので、開始までもう少々お待ちください。"
+                "Good evening, ladies and gentlemen. Welcome.",
+                "皆様、本日は「日本産食肉加工品商談会/交流会」へようこそお越しくださいました。イベントは３分後に開始いたしますので、開始までもう少々お待ちください。",
+                "We will start in three minutes. Thank you for your patience."
+              ],
+              "rich": [
+                {
+                  "lang": "en",
+                  "text": "Good evening, ladies and gentlemen. Welcome."
+                },
+                {
+                  "lang": "ja",
+                  "text": "皆様、本日は「日本産食肉加工品商談会/交流会」へようこそお越しくださいました。イベントは３分後に開始いたしますので、開始までもう少々お待ちください。"
+                },
+                {
+                  "lang": "en",
+                  "text": "We will start in three minutes. Thank you for your patience."
+                }
               ]
             },
             {
@@ -72,9 +88,43 @@
               "speaker": "日本語",
               "type": "mc1",
               "lines": [
+                "Good evening, everyone. Welcome to tonight's event.",
                 "皆様、本日はようこそお越しくださいました。進行を務めるBravoworksの保呂田と申します。",
+                "My name is Horota, from Bravoworks. I am your MC tonight.",
                 "この度は日本ハム・ソーセージ工業協同組合主催「日本産食肉加工品商談会/交流会」へご参加いただき、誠にありがとうございます。",
-                "本イベントでは、13社の著名な日本食品企業が、日本産食肉加工品を中心に展示を行っております。試食と商談を通じて、日本産食肉加工品の魅力を深くご理解いただくとともに、今後の協業の礎となることを願っております。それでは、今回の主催者をご紹介いたします。"
+                "Tonight, thirteen Japanese companies are here with their meat products.",
+                "本イベントでは、13社の著名な日本食品企業が、日本産食肉加工品を中心に展示を行っております。試食と商談を通じて、日本産食肉加工品の魅力を深くご理解いただくとともに、今後の協業の礎となることを願っております。それでは、今回の主催者をご紹介いたします。",
+                "Now, let me introduce our host."
+              ],
+              "rich": [
+                {
+                  "lang": "en",
+                  "text": "Good evening, everyone. Welcome to tonight's event."
+                },
+                {
+                  "lang": "ja",
+                  "text": "皆様、本日はようこそお越しくださいました。進行を務めるBravoworksの保呂田と申します。"
+                },
+                {
+                  "lang": "en",
+                  "text": "My name is Horota, from Bravoworks. I am your MC tonight."
+                },
+                {
+                  "lang": "ja",
+                  "text": "この度は日本ハム・ソーセージ工業協同組合主催「日本産食肉加工品商談会/交流会」へご参加いただき、誠にありがとうございます。"
+                },
+                {
+                  "lang": "en",
+                  "text": "Tonight, thirteen Japanese companies are here with their meat products."
+                },
+                {
+                  "lang": "ja",
+                  "text": "本イベントでは、13社の著名な日本食品企業が、日本産食肉加工品を中心に展示を行っております。試食と商談を通じて、日本産食肉加工品の魅力を深くご理解いただくとともに、今後の協業の礎となることを願っております。それでは、今回の主催者をご紹介いたします。"
+                },
+                {
+                  "lang": "en",
+                  "text": "Now, let me introduce our host."
+                }
               ]
             },
             {
@@ -108,7 +158,23 @@
               "speaker": "日本語",
               "type": "mc1",
               "lines": [
-                "それでは、日本ハム・ソーセージ工業協同組合の武内祐司さんより、開会のご挨拶を申し上げます。盛大な拍手でお迎えください！"
+                "Now, please welcome Mr. Yuji Takeuchi.",
+                "それでは、日本ハム・ソーセージ工業協同組合の武内祐司さんより、開会のご挨拶を申し上げます。盛大な拍手でお迎えください！",
+                "A big round of applause, please!"
+              ],
+              "rich": [
+                {
+                  "lang": "en",
+                  "text": "Now, please welcome Mr. Yuji Takeuchi."
+                },
+                {
+                  "lang": "ja",
+                  "text": "それでは、日本ハム・ソーセージ工業協同組合の武内祐司さんより、開会のご挨拶を申し上げます。盛大な拍手でお迎えください！"
+                },
+                {
+                  "lang": "en",
+                  "text": "A big round of applause, please!"
+                }
               ]
             },
             {
@@ -253,7 +319,23 @@
               "speaker": "日本語",
               "type": "mc1",
               "lines": [
-                "主催者様、ご挨拶を誠にありがとうございました。続いて、本日ご出席の13社の代表をご紹介いたします。その後、皆様、各社の商品をご試食いただき、担当者との活発な意見交換を通じ、今後のビジネス連携をぜひお深めください。"
+                "Thank you very much, Mr. Takeuchi.",
+                "主催者様、ご挨拶を誠にありがとうございました。続いて、本日ご出席の13社の代表をご紹介いたします。その後、皆様、各社の商品をご試食いただき、担当者との活発な意見交換を通じ、今後のビジネス連携をぜひお深めください。",
+                "Next, I am going to introduce the thirteen companies with us tonight."
+              ],
+              "rich": [
+                {
+                  "lang": "en",
+                  "text": "Thank you very much, Mr. Takeuchi."
+                },
+                {
+                  "lang": "ja",
+                  "text": "主催者様、ご挨拶を誠にありがとうございました。続いて、本日ご出席の13社の代表をご紹介いたします。その後、皆様、各社の商品をご試食いただき、担当者との活発な意見交換を通じ、今後のビジネス連携をぜひお深めください。"
+                },
+                {
+                  "lang": "en",
+                  "text": "Next, I am going to introduce the thirteen companies with us tonight."
+                }
               ]
             },
             {
@@ -282,7 +364,23 @@
               "speaker": "日本語",
               "type": "mc1",
               "lines": [
-                "それでは、本日ご出席の13社の代表をご紹介いたします。お名前をお呼びした際は、その場で軽く手を挙げていただければと存じます。"
+                "Now, I am going to introduce the thirteen companies here tonight.",
+                "それでは、本日ご出席の13社の代表をご紹介いたします。お名前をお呼びした際は、その場で軽く手を挙げていただければと存じます。",
+                "When I call your name, please raise your hand."
+              ],
+              "rich": [
+                {
+                  "lang": "en",
+                  "text": "Now, I am going to introduce the thirteen companies here tonight."
+                },
+                {
+                  "lang": "ja",
+                  "text": "それでは、本日ご出席の13社の代表をご紹介いたします。お名前をお呼びした際は、その場で軽く手を挙げていただければと存じます。"
+                },
+                {
+                  "lang": "en",
+                  "text": "When I call your name, please raise your hand."
+                }
               ]
             },
             {
@@ -377,7 +475,23 @@
               "speaker": "日本語",
               "type": "mc1",
               "lines": [
-                "それでは、ここからは自由に各社のブースをお回りいただき、試食と商談をお楽しみください。ごゆっくりお過ごしください。"
+                "Now, please feel free to visit each booth.",
+                "それでは、ここからは自由に各社のブースをお回りいただき、試食と商談をお楽しみください。ごゆっくりお過ごしください。",
+                "Please enjoy the tasting and the business talks."
+              ],
+              "rich": [
+                {
+                  "lang": "en",
+                  "text": "Now, please feel free to visit each booth."
+                },
+                {
+                  "lang": "ja",
+                  "text": "それでは、ここからは自由に各社のブースをお回りいただき、試食と商談をお楽しみください。ごゆっくりお過ごしください。"
+                },
+                {
+                  "lang": "en",
+                  "text": "Please enjoy the tasting and the business talks."
+                }
               ]
             },
             {
@@ -406,7 +520,23 @@
               "speaker": "日本語",
               "type": "mc1",
               "lines": [
-                "本日は日本産食肉加工品商談会/交流会にお越しいただき、誠にありがとうございました。今回の出会いが新たなビジネスの芽吹きとなり、日本産食肉加工品の魅力が皆様の市場を彩りますよう心より願っております。ご安全なお帰りをお祈りし、次回の商談会で再びお会いできますことを楽しみにしております。"
+                "Thank you very much for joining us tonight.",
+                "本日は日本産食肉加工品商談会/交流会にお越しいただき、誠にありがとうございました。今回の出会いが新たなビジネスの芽吹きとなり、日本産食肉加工品の魅力が皆様の市場を彩りますよう心より願っております。ご安全なお帰りをお祈りし、次回の商談会で再びお会いできますことを楽しみにしております。",
+                "Please have a safe trip home. We hope to see you again."
+              ],
+              "rich": [
+                {
+                  "lang": "en",
+                  "text": "Thank you very much for joining us tonight."
+                },
+                {
+                  "lang": "ja",
+                  "text": "本日は日本産食肉加工品商談会/交流会にお越しいただき、誠にありがとうございました。今回の出会いが新たなビジネスの芽吹きとなり、日本産食肉加工品の魅力が皆様の市場を彩りますよう心より願っております。ご安全なお帰りをお祈りし、次回の商談会で再びお会いできますことを楽しみにしております。"
+                },
+                {
+                  "lang": "en",
+                  "text": "Please have a safe trip home. We hope to see you again."
+                }
               ]
             },
             {

@@ -20,6 +20,7 @@ from pathlib import Path
 BASE_DIR   = Path(__file__).parent.parent
 DOCX_PATH  = BASE_DIR / "台本" / "2026香港商談会交流会_MC構成台本.docx"
 SPEECH_PATH = BASE_DIR / "台本" / "武内挨拶_日中対訳.md"
+ENMIX_PATH  = BASE_DIR / "台本" / "保呂田パート_英語ミックス.md"
 OUT_PATH    = Path(__file__).parent / "data" / "hk2026.json"
 OUT_JS_PATH = Path(__file__).parent / "data" / "hk2026.js"
 
@@ -178,6 +179,55 @@ def load_speech():
     return pairs
 
 
+def load_enmix():
+    """保呂田パートの英語ミックス版を読み込む → {(partId, n): [{lang,text}, ...]}"""
+    if not ENMIX_PATH.exists():
+        return {}
+    blocks, key = {}, None
+    for raw in ENMIX_PATH.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        h = re.match(r"^##\s+(part\d+)\s*#(\d+)\s*$", line)
+        if h:
+            key = (h.group(1), int(h.group(2)))
+            blocks[key] = []
+            continue
+        m = re.match(r"^\[(EN|JA)\]\s*(.+)$", line)
+        if m and key:
+            blocks[key].append({"lang": m.group(1).lower(), "text": m.group(2).strip()})
+    return {k: v for k, v in blocks.items() if v}
+
+
+def apply_enmix(parts, blocks):
+    """保呂田(mc1)セグメントに rich（言語タグ付き行）を付ける。日本語本文の検算つき"""
+    if not blocks:
+        return 0, []
+    applied, warnings = 0, []
+    used = set()
+    for part in parts:
+        n = 0
+        for row in part["rows"]:
+            for seg in row["script"]:
+                if seg["type"] != "mc1":
+                    continue
+                n += 1
+                rich = blocks.get((part["id"], n))
+                if not rich:
+                    continue
+                used.add((part["id"], n))
+                # 原稿の日本語が改変されていないか検算（空白除去して比較）
+                orig = re.sub(r"\s", "", "".join(seg["lines"]))
+                new  = re.sub(r"\s", "", "".join(r["text"] for r in rich if r["lang"] == "ja"))
+                if orig != new:
+                    warnings.append(f"{part['id']} #{n}: 日本語が原稿と一致しません")
+                seg["rich"] = rich
+                seg["lines"] = [r["text"] for r in rich]
+                applied += 1
+    for k in blocks:
+        if k not in used:
+            warnings.append(f"{k[0]} #{k[1]}: 差し込み先の保呂田セグメントが見つかりません")
+    return applied, warnings
+
+
 def inject_speech(parts, pairs):
     """part3 の「原稿の通り／跟原稿」プレースホルダを実際の挨拶文に差し替える"""
     if not pairs:
@@ -266,6 +316,13 @@ def main():
         print("   [WARN] 挨拶の差し込み先（「原稿の通り」）が見つかりませんでした")
     elif n:
         print(f"   武内さん挨拶 {len(pairs)}段落を差し込み")
+
+    # 保呂田パートに英語を差し込む（Cindyの中文パートには触れない）
+    applied, warns = apply_enmix(parts, load_enmix())
+    if applied:
+        print(f"   保呂田パート {applied}箇所に英語ミックスを適用")
+    for w in warns:
+        print(f"   [WARN] {w}")
 
     data = dict(EVENT)
     data["parts"] = parts

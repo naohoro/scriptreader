@@ -398,7 +398,18 @@ function buildSegment(seg, data) {
   }
   segEl.appendChild(labelEl);
 
-  if (seg.lines.length) {
+  // rich = 言語タグ付きの行（保呂田パートの日本語＋英語ミックス）
+  if (seg.rich && seg.rich.length) {
+    const linesEl = document.createElement('div');
+    linesEl.className = 'seg-lines';
+    seg.rich.forEach(l => {
+      const lineEl = document.createElement('div');
+      lineEl.className   = l.lang === 'en' ? 'seg-line line-en' : 'seg-line';
+      lineEl.textContent = l.text;
+      linesEl.appendChild(lineEl);
+    });
+    segEl.appendChild(linesEl);
+  } else if (seg.lines.length) {
     const linesEl = document.createElement('div');
     linesEl.className   = 'seg-lines';
     linesEl.textContent = seg.lines.join('\n');
