@@ -1016,3 +1016,11 @@ html, body {
   line-height: 1.6;
   color: var(--text-dim);
 }
+
+/* ── 来賓の発話（武内さん挨拶）────────────────── */
+.segment-guest {
+  background: var(--both-bg);
+  border-left: 3px solid var(--both-border);
+}
+.segment-guest .seg-label { color: var(--both); letter-spacing: 0.06em; }
+.segment-guest .seg-label::before { background: var(--both); }

@@ -19,6 +19,7 @@ from pathlib import Path
 
 BASE_DIR   = Path(__file__).parent.parent
 DOCX_PATH  = BASE_DIR / "台本" / "2026香港商談会交流会_MC構成台本.docx"
+SPEECH_PATH = BASE_DIR / "台本" / "武内挨拶_日中対訳.md"
 OUT_PATH    = Path(__file__).parent / "data" / "hk2026.json"
 OUT_JS_PATH = Path(__file__).parent / "data" / "hk2026.js"
 
@@ -148,6 +149,63 @@ def extract_time(text):
     return m.group(0) if m else None
 
 
+def load_speech():
+    """武内さんの挨拶（日中対訳）を読み込む。無ければ空リスト"""
+    if not SPEECH_PATH.exists():
+        return []
+    pairs, cur = [], {}
+    for raw in SPEECH_PATH.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        m = re.match(r"^\[(JA|ZH)\]\s*(.+)$", line)
+        if not m:
+            continue
+        tag, body = m.group(1), m.group(2).strip()
+        if tag == "JA":
+            if cur.get("ja"):
+                pairs.append(cur)
+                cur = {}
+            cur["ja"] = body
+        else:
+            cur["zh"] = body
+            pairs.append(cur)
+            cur = {}
+    if cur.get("ja"):
+        pairs.append(cur)
+
+    missing = [i + 1 for i, p in enumerate(pairs) if not p.get("zh")]
+    if missing:
+        print(f"   [WARN] 中文訳が無い段落: {missing}")
+    return pairs
+
+
+def inject_speech(parts, pairs):
+    """part3 の「原稿の通り／跟原稿」プレースホルダを実際の挨拶文に差し替える"""
+    if not pairs:
+        return 0
+    replaced = 0
+    for part in parts:
+        for row in part["rows"]:
+            segs, out, done = row["script"], [], False
+            for seg in segs:
+                text = "".join(seg["lines"])
+                if seg["type"] == "mc1" and text == "原稿の通り":
+                    for i, p in enumerate(pairs, 1):
+                        out.append({"speaker": f"武内さん（{i}/{len(pairs)}）",
+                                    "type": "guest", "lines": [p["ja"]]})
+                        if p.get("zh"):
+                            out.append({"speaker": "中文", "type": "mc2",
+                                        "lines": [p["zh"]]})
+                    done = True
+                    continue
+                if seg["type"] == "mc2" and text == "跟原稿" and done:
+                    continue  # 対になる中文プレースホルダも捨てる
+                out.append(seg)
+            if done:
+                row["script"] = out
+                replaced += 1
+    return replaced
+
+
 def main():
     doc = docx.Document(str(DOCX_PATH))
     table = doc.tables[0]
@@ -200,6 +258,14 @@ def main():
             row_obj["script"] = parse_script_cell(lines)
 
         part["rows"].append(row_obj)
+
+    # 武内さんの挨拶（別ファイル）を主催者挨拶セクションへ差し込む
+    pairs = load_speech()
+    n = inject_speech(parts, pairs)
+    if pairs and not n:
+        print("   [WARN] 挨拶の差し込み先（「原稿の通り」）が見つかりませんでした")
+    elif n:
+        print(f"   武内さん挨拶 {len(pairs)}段落を差し込み")
 
     data = dict(EVENT)
     data["parts"] = parts

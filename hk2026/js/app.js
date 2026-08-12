@@ -487,10 +487,14 @@ function applyMcFilterUI() {
 
   document.querySelectorAll('.script-segment').forEach(seg => {
     const type = seg.dataset.segType;
+    // 来賓（武内さん）の発話は日本語側。保呂田フィルタでは残す
+    const isJaSide = (type === 'mc1' || type === 'guest');
     if (filter === 'all' || type === 'cue' || type === 'note') {
       seg.classList.remove('dimmed');
+    } else if (filter === 'mc1') {
+      seg.classList.toggle('dimmed', !isJaSide);
     } else {
-      seg.classList.toggle('dimmed', type !== filter);
+      seg.classList.toggle('dimmed', type !== 'mc2');
     }
   });
 

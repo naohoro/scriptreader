@@ -9,6 +9,36 @@ JWWA2026（ワールドオークション）で使った Script Reader を、香
 
 ---
 
+## 公開URL
+
+| | URL | 中身 |
+|---|---|---|
+| **本番（これを使う）** | https://hk-mc-script-2026.netlify.app | 香港専用サイト。開いたら即台本 |
+| 予備 | https://worldauction2026.netlify.app/hk2026/ | JWWAのサイトに相乗り。GitHub連携で自動デプロイ |
+
+- Netlifyアカウント：**BW側 `horota@bravoworks.jp`（team slug: `naohoro`）**
+  KCの `pui@katsumi.company` とは別。CLIにデフォルトで入っているのはKCの方なので**必ずトークンを明示する**
+- トークンはおかん：`netlify-bw`
+- `noindex, nofollow, noarchive` ＋ `robots.txt` で検索エンジンには載せていない
+
+### 再デプロイ（台本を直したとき）
+
+```bash
+cd ScriptReader
+/usr/local/bin/python3 parse_script.py    # docx → data
+/usr/local/bin/python3 build_single.py    # オフライン1ファイル版
+
+# 配信フォルダへ反映して本番サイトへ
+cp -R index.html css js data ../_netlify_deploy/
+okan exec netlify-bw:NETLIFY_AUTH_TOKEN -- npx netlify-cli deploy \
+  --dir ../_netlify_deploy --prod \
+  --site ec0268c2-a4e2-4a83-b6e9-a546035727de
+```
+
+予備URLの方は `naohoro/scriptreader` の `hk2026/` にpushすれば自動で更新される（キャッシュ60秒）。
+
+---
+
 ## 当日の使い方
 
 ### いちばん確実な方法（オフライン・推奨）
