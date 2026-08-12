@@ -13,3 +13,9 @@
   [headers.values]
     Cache-Control = "public, max-age=600"
     Content-Type = "application/json; charset=utf-8"
+
+# 香港2026（当日の直し反映が1時間遅れないよう、キャッシュを短くする）
+[[headers]]
+  for = "/hk2026/*"
+  [headers.values]
+    Cache-Control = "public, max-age=60, must-revalidate"
